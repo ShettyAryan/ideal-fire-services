@@ -6,57 +6,79 @@ import { useScrollReveal } from '../components/useScrollReveal'
 
 const services = [
   {
-    tag: 'SYSTEM DESIGN & INSTALLATION',
-    icon: 'engineering',
-    title: 'Fire Fighting System Installation',
-    desc: 'We specialize in high-performance suppression systems engineered for immediate response. From complex industrial hydrants to delicate gas suppression for server rooms.',
+    tag: "SYSTEM DESIGN & INSTALLATION",
+    icon: "engineering",
+    title: "Fire Fighting System Installation",
+    desc: "We specialize in high-performance suppression systems engineered for immediate response. From complex industrial hydrants to delicate gas suppression for server rooms.",
     features: [
-      { name: 'Hydrant Systems', sub: 'Internal & External networks' },
-      { name: 'Automatic Sprinklers', sub: 'Wet/Dry pipe installations' },
-      { name: 'Gas Suppression', sub: 'FM200 & CO2 flooding' },
-      { name: 'Pump Room Setup', sub: 'Main, Jockey & Diesel pumps' },
+      { name: "Hydrant Systems", sub: "Internal & External networks" },
+      { name: "Automatic Sprinklers", sub: "Wet/Dry pipe installations" },
+      { name: "Gas Suppression", sub: "FM200 & CO2 flooding" },
+      { name: "Pump Room Setup", sub: "Main, Jockey & Diesel pumps" },
     ],
-    note: 'All installations are strictly compliant with NBC 2016 and local Mumbai Fire Brigade standards.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0NvNyBl73w9jvt68fgBpmv7uwAqQEhHfNJzFx_zKANopbthzAcOpCV02ib2EJVmiVd9usZS_8V4WO0SVfHFsezz-eLCl2dngwSzznjueun9IEntNNfNCHGTJLrodF_wokvpegRTQ-o42CexWDLjAoD0rx8q-OR6bUZaIu2hEKqm_t74C5ZMazL91mKWfWcyMMMbNkCgenvEvePkFI0BvYIp0YKvy-LXzgAsZb7IDzohq71OGXGVHmDx3ML8hs3CmrzSbf7b55sgc',
+    note: "All installations are strictly compliant with local Mumbai Fire Brigade standards.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0NvNyBl73w9jvt68fgBpmv7uwAqQEhHfNJzFx_zKANopbthzAcOpCV02ib2EJVmiVd9usZS_8V4WO0SVfHFsezz-eLCl2dngwSzznjueun9IEntNNfNCHGTJLrodF_wokvpegRTQ-o42CexWDLjAoD0rx8q-OR6bUZaIu2hEKqm_t74C5ZMazL91mKWfWcyMMMbNkCgenvEvePkFI0BvYIp0YKvy-LXzgAsZb7IDzohq71OGXGVHmDx3ML8hs3CmrzSbf7b55sgc",
   },
   {
-    tag: 'EQUIPMENT & MAINTENANCE',
-    icon: 'fire_extinguisher',
-    title: 'Fire Extinguishers: Full Lifecycle',
+    tag: "EQUIPMENT & MAINTENANCE",
+    icon: "fire_extinguisher",
+    title: "Fire Extinguishers: Full Lifecycle",
     desc: "Comprehensive portable protection. We don't just sell equipment; we manage your entire safety compliance schedule including timely refilling and certification.",
     features: [
-      { name: 'ABC Powder & CO2', sub: 'Versatile protection for all fire classes' },
-      { name: 'Refilling & Hydro-Testing', sub: 'Mandatory testing for safety & compliance' },
-      { name: 'Form B Certification', sub: 'Official documentation for fire audits' },
-      { name: 'ISI Marked Products', sub: 'Certified grade A equipment only' },
+      {
+        name: "Water CO2 fire extinguishers",
+        sub: "Protecction for Class A fires",
+      },
+      {
+        name: "Mechanical Foam fire extinguishers (AFFF)",
+        sub: "Protecction for Class B fires",
+      },
+      {
+        name: "DCP (Dry Chemical Powder) fire extinguishers",
+        sub: "Protecction for Class B & C fires",
+      },
+      {
+        name: "ABC (Monoammonium Phosphate) fire extinguishers",
+        sub: "Protecction for all classes of fires and electrical fires",
+      },
+      {
+        name: "Refilling & Hydro-Testing",
+        sub: "Mandatory testing for safety & compliance",
+      },
+      {
+        name: "Form B Certification",
+        sub: "Official documentation for fire audits",
+      },
     ],
-    note: 'Complete lifecycle management from supply to refilling, testing, and compliance documentation.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzB28Fogwl4AhhZEQ9B9rZnsn_OicbE7uIR7YB5HR70DvgivtFJw6Ced6E8_1B_z4wTVhZEPJfB13jaENJclQodqVKmtzEOJJDG4HEouajN2slzYZ4CmTsEtD3HGKRmdGYgZlO7zomQbtbM7pXyaEmbM9PBEZ2rcJeOUv0bFmG9HLm5N1Cl879e6CU6SUZzq9U2n75R9q3tfWRKenbrkPEmO0qQmN1jCRMVTziyHARhr6BKoTS2-4EmVj1GXkjlmCiQod_wUz8hBU',
+    note: "Complete lifecycle management from supply to refilling, testing, and compliance documentation.",
+    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzB28Fogwl4AhhZEQ9B9rZnsn_OicbE7uIR7YB5HR70DvgivtFJw6Ced6E8_1B_z4wTVhZEPJfB13jaENJclQodqVKmtzEOJJDG4HEouajN2slzYZ4CmTsEtD3HGKRmdGYgZlO7zomQbtbM7pXyaEmbM9PBEZ2rcJeOUv0bFmG9HLm5N1Cl879e6CU6SUZzq9U2n75R9q3tfWRKenbrkPEmO0qQmN1jCRMVTziyHARhr6BKoTS2-4EmVj1GXkjlmCiQod_wUz8hBU",
     reversed: true,
   },
   {
-    tag: 'DETECTION SYSTEMS',
-    icon: 'notifications_active',
-    title: 'Fire Alarm & Detection Systems',
-    desc: 'Early detection is the key to preventing catastrophe. Our addressable and conventional alarm systems provide pinpoint accuracy during emergencies.',
+    tag: "DETECTION SYSTEMS",
+    icon: "notifications_active",
+    title: "Fire Alarm & Detection Systems",
+    desc: "Early detection is the key to preventing catastrophe. Our addressable and conventional alarm systems provide pinpoint accuracy during emergencies.",
     features: [
-      { name: 'Photoelectric Detectors', sub: 'Smoke, heat & multi-sensor' },
-      { name: 'Addressable Panels', sub: 'Touch-screen with remote monitoring' },
-      { name: 'Voice Evacuation', sub: 'Integrated PA and alarm systems' },
-      { name: 'IoT Integration', sub: 'Real-time smartphone alerts' },
+      { name: "Detectors", sub: "Photoelectric smoke, heat and beam detectors" },
+      {
+        name: "Control Panels",
+        sub: "Manual type as well as addressable type",
+      },
+
     ],
-    note: 'Real-time smartphone alerts and central station monitoring for 24/7 protection.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBjP-0GI_WDRXuVk6_2fndRckpcHJOD2-LTcaxhxSG9UvOI2DQFWhYbu9l53CMy0mYtfoWbTY0D6k1prhMQtf28KiZ9eaakTFO5lBHbncVLdza8O9MJ6sqHeXxpURal8NRTkvJS2AutkFP2DEPQkHk5UiGMtGRlOgzLe7vlUkFngX96NI1D92mJd1DRuOhPzIq43giS_mC4McfrrjeMNII25bAY7dOE6Y6DAFPtL-wzuCx2hZyuaDtZB4vF4xRS84I1FlKAjpIimFk',
+    note: "Quality products from leading manufacturers and Quality installation by our experienced team.",
+    img: "https://jpindustriesindia.co.in/wp-content/uploads/2022/08/FIRE-scaled.jpg",
   },
-]
+];
 
 const amcFeatures = [
-  { icon: 'construction', title: 'Preventive Maintenance', desc: 'Monthly/Quarterly physical inspection and testing of all components.' },
-  { icon: 'support_agent', title: '24/7 Priority Support', desc: 'Emergency breakdown response within 4 hours in Mumbai/Thane.' },
-  { icon: 'analytics', title: 'Compliance Audits', desc: 'Detailed reports for fire department audits and insurance purposes.' },
-  { icon: 'school', title: 'Training & Drills', desc: 'Regular fire drill sessions for your staff and security teams.' },
-  { icon: 'history', title: 'Service Records', desc: 'Digital maintenance logs accessible anytime, anywhere.' },
-  { icon: 'verified', title: 'Certificate Renewal', desc: 'We handle all NOC and Form B renewals on your behalf.' },
+  { icon: 'construction', title: 'Preventive Maintenance', desc: 'Quarterly physical inspection and testing of all components.' },
+  // { icon: 'support_agent', title: '24/7 Priority Support', desc: 'Emergency breakdown response within 4 hours in Mumbai/Thane.' },
+  { icon: 'analytics', title: 'Compliance Audits', desc: 'Detailed reports for fire compliance' },
+  { icon: 'school', title: 'Training & Drills', desc: 'Regular fire drill sessions for your staff, security teams and building occupants.' },
+  // { icon: 'history', title: 'Service Records', desc: 'Digital maintenance logs accessible anytime, anywhere.' },
+  // { icon: 'verified', title: 'Certificate Renewal', desc: 'We handle all NOC and Form B renewals on your behalf.' },
 ]
 
 export default function Services() {
@@ -88,7 +110,7 @@ export default function Services() {
             Our Fire Safety<br /><span className="text-primary">Services</span>
           </h1>
           <div className="flex flex-wrap gap-3">
-            {['ISO Certified', 'Maharashtra Fire Service Compliant', 'NBC 2016'].map((tag) => (
+            {['Maharashtra Fire Service Compliant'].map((tag) => (
               <div key={tag} className="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                 <span className="material-symbols-outlined text-primary text-sm">verified</span>
                 <span className="text-white text-xs font-bold">{tag}</span>
