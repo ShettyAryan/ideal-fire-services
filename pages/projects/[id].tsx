@@ -91,7 +91,7 @@ export default function ProjectDetail() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 w-full">
-          <div className="mb-6 flex flex-wrap gap-3 items-center text-xs font-bold uppercase tracking-[0.25em] text-slate-300">
+          <div className="mb-6 flex flex-wrap gap-3 items-center text-xs font-bold uppercase tracking-[0.25em] text-slate-300 pt-32">
             <span className="px-3 py-1 rounded-full bg-primary/80 text-white flex items-center gap-1">
               <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                 apartment
