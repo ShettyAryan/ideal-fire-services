@@ -124,7 +124,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(false)}
         />
         <div
-          className={`mobile-menu absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl flex flex-col ${
+          className={`mobile-menu absolute right-0 top-0 bottom-0 w-72 max-w-[80%] bg-white shadow-2xl flex flex-col ${
             mobileOpen ? "open" : ""
           }`}
         >
