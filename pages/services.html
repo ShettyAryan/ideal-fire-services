@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Ideal Fire Services Mumbai</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { primary: '#c20000', 'bg-light': '#f8f5f5', 'bg-dark': '#140a0a' },
+        fontFamily: { display: ['Public Sans', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+<style>
+  * { font-family: 'Public Sans', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined'; }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  #mobile-menu.open { max-height: 400px; }
+  .nav-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+  .service-section { scroll-margin-top: 90px; }
+  .red-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #c20000; border-radius: 2px; }
+  /* Service nav sticky */
+  #service-nav { transition: all 0.3s; }
+  .service-nav-link.active { color: #c20000; background: rgba(194,0,0,0.06); }
+  .check-item { display: flex; align-items: flex-start; gap: 12px; }
+  .check-item .icon { width: 24px; height: 24px; background: rgba(194,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .detail-card { transition: all 0.3s; }
+  .detail-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+</style>
+</head>
+<body class="bg-bg-light text-slate-900">
+
+<!-- NAV -->
+<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-white text-xl">local_fire_department</span>
+        </div>
+        <div>
+          <div class="text-[15px] font-black tracking-tight leading-none text-slate-900 uppercase">Ideal Fire</div>
+          <div class="text-[9px] font-bold tracking-[0.22em] text-primary uppercase mt-0.5">Services Since 1991</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Home</a>
+        <a href="about.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">About</a>
+        <a href="services.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg bg-primary/5">Services</a>
+        <a href="projects.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Projects</a>
+        <a href="contact.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition-all">
+          <span class="material-symbols-outlined text-base">emergency_share</span>Get Free Audit
+        </a>
+        <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200">
+          <span id="menu-icon" class="material-symbols-outlined text-xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-slate-100 bg-white">
+    <div class="px-4 py-4 space-y-1">
+      <a href="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Home</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">About</a>
+      <a href="services.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-primary bg-primary/5">Services</a>
+      <a href="projects.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Projects</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-20 min-h-[55vh] flex items-center overflow-hidden bg-bg-dark">
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3CC7YEvHKQJUPe_L8Te2NZOgUdY8uuYbWrZ8Rhd_8Scl6dFI31aI-wWRHRPAlaSUr32fFmLvQF2wU0UsgC2O9jp0lbqzr75y2TjY3KrhVmPw8Fo7O7OC9iyAM9BPTmPGEQCMiuPgZtndmFYGUkZT8GFeLFjHFB5h3nU-2ej70yhtNNtp7fqSE6rMupQ47JOQoMi2fK6Awr6t1vGTZvL_SSF05dRTQmPxY2LDTZDfxqDzdKPkvOoNeA-qxXA3HR4gNld8WqB8cQ6E');"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-bg-dark via-bg-dark/90 to-bg-dark/50"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-bg-light to-transparent"></div>
+  <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/8 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="flex items-center gap-2 text-white/40 text-xs font-bold uppercase tracking-widest mb-6 reveal">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-primary">Services</span>
+    </div>
+    <div class="max-w-2xl">
+      <div class="reveal reveal-delay-1 inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase">End-to-End Fire Protection</span>
+      </div>
+      <h1 class="reveal reveal-delay-2 text-5xl md:text-7xl font-black text-white leading-[1.02] mb-6">
+        Every Service.<br/>
+        <span class="text-primary italic">One Standard.</span>
+      </h1>
+      <p class="reveal reveal-delay-3 text-xl text-white/50 leading-relaxed font-light max-w-lg mb-8">
+        Four core service lines. Thirty years of expertise. Zero compromises on safety or compliance.
+      </p>
+      <div class="reveal reveal-delay-4 flex flex-wrap gap-3">
+        <div class="flex items-center gap-2 bg-white/8 border border-white/15 px-4 py-2 rounded-lg">
+          <span class="material-symbols-outlined text-primary text-base">verified</span>
+          <span class="text-white text-xs font-bold">ISO Certified</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/8 border border-white/15 px-4 py-2 rounded-lg">
+          <span class="material-symbols-outlined text-primary text-base">gavel</span>
+          <span class="text-white text-xs font-bold">NBC 2016 Compliant</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/8 border border-white/15 px-4 py-2 rounded-lg">
+          <span class="material-symbols-outlined text-primary text-base">support_agent</span>
+          <span class="text-white text-xs font-bold">24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE QUICK NAV -->
+<div id="service-nav" class="sticky top-20 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex gap-1 overflow-x-auto py-3 scrollbar-none">
+      <a href="#installation" class="service-nav-link shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">construction</span>System Installation
+      </a>
+      <a href="#extinguishers" class="service-nav-link shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">fire_extinguisher</span>Extinguishers
+      </a>
+      <a href="#alarms" class="service-nav-link shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">notifications_active</span>Fire Alarms
+      </a>
+      <a href="#amc" class="service-nav-link shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">calendar_month</span>AMC Plans
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="py-16">
+
+  <!-- ═══ 1. INSTALLATION ═══ -->
+  <section id="installation" class="service-section py-20 bg-bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-left relative">
+          <div class="red-bar"></div>
+          <div class="pl-8">
+            <div class="flex items-center gap-2 text-primary mb-3">
+              <span class="material-symbols-outlined text-lg">engineering</span>
+              <span class="font-black text-xs tracking-[0.2em] uppercase">Service 01</span>
+            </div>
+            <h2 class="text-4xl font-black text-slate-900 mb-5 leading-tight">Fire Fighting<br/>System Installation</h2>
+            <p class="text-slate-500 text-lg leading-relaxed mb-8">High-performance suppression systems engineered for immediate response. We design and install everything from complex industrial hydrant networks to precision gas suppression systems for server rooms.</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">Hydrant Systems</div><div class="text-xs text-slate-400">Internal & External networks</div></div></div>
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">Auto Sprinklers</div><div class="text-xs text-slate-400">Wet/Dry pipe installations</div></div></div>
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">Gas Suppression</div><div class="text-xs text-slate-400">FM200 & CO2 flooding systems</div></div></div>
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">Pump Room Setup</div><div class="text-xs text-slate-400">Main, Jockey & Diesel pumps</div></div></div>
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">Deluge Systems</div><div class="text-xs text-slate-400">For high-hazard industrial areas</div></div></div>
+              <div class="check-item"><div class="icon"><span class="material-symbols-outlined text-primary text-sm">check</span></div><div><div class="font-bold text-sm">ESFR Sprinklers</div><div class="text-xs text-slate-400">For warehouses & high-bay storage</div></div></div>
+            </div>
+
+            <div class="p-5 bg-white border-l-4 border-primary rounded-r-xl shadow-sm">
+              <p class="text-sm font-semibold italic text-slate-600">"All installations strictly compliant with NBC 2016, IS Codes, and local Mumbai Fire Brigade standards."</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NvNyBl73w9jvt68fgBpmv7uwAqQEhHfNJzFx_zKANopbthzAcOpCV02ib2EJVmiVd9usZS_8V4WO0SVfHFsezz-eLCl2dngwSzznjueun9IEntNNfNCHGTJLrodF_wokvpegRTQ-o42CexWDLjAoD0rx8q-OR6bUZaIu2hEKqm_t74C5ZMazL91mKWfWcyMMMbNkCgenvEvePkFI0BvYIp0YKvy-LXzgAsZb7IDzohq71OGXGVHmDx3ML8hs3CmrzSbf7b55sgc"
+                 class="w-full h-96 object-cover" alt="Fire hydrant installation"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. EXTINGUISHERS ═══ -->
+  <section id="extinguishers" class="service-section py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="order-2 lg:order-1 reveal-left">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzB28Fogwl4AhhZEQ9B9rZnsn_OicbE7uIR7YB5HR70DvgivtFJw6Ced6E8_1B_z4wTVhZEPJfB13jaENJclQodqVKmtzEOJJDG4HEouajN2slzYZ4CmTsEtD3HGKRmdGYgZlO7zomQbtbM7pXyaEmbM9PBEZ2rcJeOUv0bFmG9HLm5N1Cl879e6CU6SUZzq9U2n75R9q3tfWRKenbrkPEmO0qQmN1jCRMVTziyHARhr6BKoTS2-4EmVj1GXkjlmCiQod_wUz8hBU"
+                 class="w-full h-96 object-cover" alt="Fire extinguishers"/>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 reveal-right relative">
+          <div class="red-bar"></div>
+          <div class="pl-8">
+            <div class="flex items-center gap-2 text-primary mb-3">
+              <span class="material-symbols-outlined text-lg">fire_extinguisher</span>
+              <span class="font-black text-xs tracking-[0.2em] uppercase">Service 02</span>
+            </div>
+            <h2 class="text-4xl font-black text-slate-900 mb-5 leading-tight">Fire Extinguishers:<br/>Full Lifecycle</h2>
+            <p class="text-slate-500 text-lg leading-relaxed mb-8">We don't just supply equipment — we manage your entire safety compliance schedule including timely refilling, testing, and documentation for every fire audit.</p>
+
+            <div class="space-y-3 mb-8">
+              <div class="detail-card flex items-center p-4 bg-bg-light border border-slate-100 rounded-xl">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-4 shrink-0">
+                  <span class="material-symbols-outlined text-lg">local_fire_department</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-sm">ABC Powder & CO2 Extinguishers</div>
+                  <div class="text-xs text-slate-400">ISI-marked for all fire classes</div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+              </div>
+              <div class="detail-card flex items-center p-4 bg-bg-light border border-slate-100 rounded-xl">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-4 shrink-0">
+                  <span class="material-symbols-outlined text-lg">water_drop</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-sm">Refilling & Hydro-Testing</div>
+                  <div class="text-xs text-slate-400">Mandatory testing for safety compliance</div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+              </div>
+              <div class="detail-card flex items-center p-4 bg-bg-light border border-slate-100 rounded-xl">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-4 shrink-0">
+                  <span class="material-symbols-outlined text-lg">task</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-sm">Form B Certification</div>
+                  <div class="text-xs text-slate-400">Official docs for Mumbai Fire Brigade audits</div>
+                </div>
+                <span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg text-sm font-black hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/30">
+              Request Supply Quote <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. FIRE ALARMS ═══ -->
+  <section id="alarms" class="service-section py-20 bg-bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal-left relative">
+          <div class="red-bar"></div>
+          <div class="pl-8">
+            <div class="flex items-center gap-2 text-primary mb-3">
+              <span class="material-symbols-outlined text-lg">notification_important</span>
+              <span class="font-black text-xs tracking-[0.2em] uppercase">Service 03</span>
+            </div>
+            <h2 class="text-4xl font-black text-slate-900 mb-5 leading-tight">Fire Alarm &<br/>Detection Systems</h2>
+            <p class="text-slate-500 text-lg leading-relaxed mb-8">Early detection prevents catastrophe. Our addressable and conventional alarm systems provide pinpoint zone accuracy during emergencies, giving occupants maximum evacuation time.</p>
+
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-bg-dark rounded-lg flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-white text-base">detector_smoke</span>
+                </div>
+                <div class="font-bold text-sm mb-1">Smart Detectors</div>
+                <div class="text-xs text-slate-400">Photoelectric smoke, heat, multi-sensor units</div>
+              </div>
+              <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-bg-dark rounded-lg flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-white text-base">settings_input_component</span>
+                </div>
+                <div class="font-bold text-sm mb-1">Control Panels</div>
+                <div class="text-xs text-slate-400">Touchscreen panels with remote access</div>
+              </div>
+              <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-bg-dark rounded-lg flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-white text-base">phone_iphone</span>
+                </div>
+                <div class="font-bold text-sm mb-1">Mobile Alerts</div>
+                <div class="text-xs text-slate-400">Real-time smartphone notifications</div>
+              </div>
+              <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
+                <div class="w-10 h-10 bg-bg-dark rounded-lg flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-white text-base">sensors</span>
+                </div>
+                <div class="font-bold text-sm mb-1">IoT Integration</div>
+                <div class="text-xs text-slate-400">BMS and central station monitoring</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right relative">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjP-0GI_WDRXuVk6_2fndRckpcHJOD2-LTcaxhxSG9UvOI2DQFWhYbu9l53CMy0mYtfoWbTY0D6k1prhMQtf28KiZ9eaakTFO5lBHbncVLdza8O9MJ6sqHeXxpURal8NRTkvJS2AutkFP2DEPQkHk5UiGMtGRlOgzLe7vlUkFngX96NI1D92mJd1DRuOhPzIq43giS_mC4McfrrjeMNII25bAY7dOE6Y6DAFPtL-wzuCx2hZyuaDtZB4vF4xRS84I1FlKAjpIimFk"
+                 class="w-full h-96 object-cover" alt="Fire alarm control panel"/>
+          </div>
+          <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-4 rounded-xl shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              <div>
+                <div class="text-xs font-black text-slate-900 uppercase tracking-wider">Feature Spotlight</div>
+                <div class="text-xs text-slate-500">Real-time smartphone alerts & central monitoring</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. AMC ═══ -->
+  <section id="amc" class="service-section py-20 bg-bg-dark relative overflow-hidden">
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+    <div class="absolute top-0 right-10 opacity-5 text-white text-[250px] font-black leading-none select-none">AMC</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl reveal">
+        <div class="flex items-center gap-2 text-primary mb-3">
+          <span class="material-symbols-outlined text-lg">calendar_month</span>
+          <span class="font-black text-xs tracking-[0.2em] uppercase text-primary">Service 04</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">Annual Maintenance<br/><span class="text-primary">Contracts (AMC)</span></h2>
+        <p class="text-slate-400 text-lg mb-12 leading-relaxed max-w-2xl">A fire system is only as good as its last inspection. Our AMC plans ensure your equipment is always functional and your property remains fully compliant with Mumbai's fire regulations.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="flex gap-4 p-5 bg-white/5 border border-white/8 rounded-xl hover:border-primary/30 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-white text-base">construction</span>
+            </div>
+            <div>
+              <div class="font-black text-white mb-1">Preventive Maintenance</div>
+              <div class="text-slate-400 text-sm">Monthly/Quarterly physical inspection & testing of all components.</div>
+            </div>
+          </div>
+          <div class="flex gap-4 p-5 bg-white/5 border border-white/8 rounded-xl hover:border-primary/30 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-white text-base">support_agent</span>
+            </div>
+            <div>
+              <div class="font-black text-white mb-1">24/7 Priority Support</div>
+              <div class="text-slate-400 text-sm">Emergency breakdown response within 4 hours in Mumbai & Thane.</div>
+            </div>
+          </div>
+          <div class="flex gap-4 p-5 bg-white/5 border border-white/8 rounded-xl hover:border-primary/30 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-white text-base">analytics</span>
+            </div>
+            <div>
+              <div class="font-black text-white mb-1">Compliance Reports</div>
+              <div class="text-slate-400 text-sm">Detailed audit docs for fire department inspections & insurance.</div>
+            </div>
+          </div>
+          <div class="flex gap-4 p-5 bg-white/5 border border-white/8 rounded-xl hover:border-primary/30 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-white text-base">school</span>
+            </div>
+            <div>
+              <div class="font-black text-white mb-1">Training & Drills</div>
+              <div class="text-slate-400 text-sm">Regular fire drill sessions for your staff and security teams.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-bg-dark px-8 py-4 rounded-lg font-black text-sm hover:bg-primary hover:text-white transition-all shadow-xl">
+          Customize Your AMC Plan <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CTA -->
+<section class="py-24 bg-primary relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute -top-20 -right-20 w-96 h-96 border-[40px] border-white rounded-full"></div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 text-center relative z-10 reveal">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Not Sure Which Service You Need?</h2>
+    <p class="text-white/70 text-lg mb-10">Our experts will assess your premises and recommend the right protection plan.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="contact.html" class="w-full sm:w-auto bg-white text-primary px-10 py-4 rounded-lg text-base font-black hover:bg-slate-100 transition-all shadow-xl">Book Free Consultation</a>
+      <a href="projects.html" class="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-10 py-4 rounded-lg text-base font-bold hover:bg-white/20 transition-all">See Our Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-bg-dark text-slate-400 pt-20 pb-8 border-t-4 border-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-6"><div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl">local_fire_department</span></div><div><div class="text-white font-black text-base uppercase">Ideal Fire</div><div class="text-primary text-[9px] font-bold tracking-[0.2em] uppercase">Services Since 1991</div></div></div>
+        <p class="text-sm leading-relaxed">Pioneering fire safety in Mumbai for over three decades.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Navigation</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-primary transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Services</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#installation" class="hover:text-primary transition-colors">System Installation</a></li>
+          <li><a href="#extinguishers" class="hover:text-primary transition-colors">Extinguishers</a></li>
+          <li><a href="#alarms" class="hover:text-primary transition-colors">Fire Alarms</a></li>
+          <li><a href="#amc" class="hover:text-primary transition-colors">AMC Plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Contact</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span><span>Goregaon West, Mumbai - 400104</span></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">phone_in_talk</span><a href="tel:+912228000000" class="hover:text-primary transition-colors">+91 22 2800 0000</a></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">mail</span><a href="mailto:info@idealfiremumbai.com" class="hover:text-primary transition-colors">info@idealfiremumbai.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 uppercase tracking-widest font-medium">
+      <p>© 2024 Ideal Fire Services. All Rights Reserved.</p>
+      <div class="flex gap-8"><a href="#" class="hover:text-white transition-colors">Privacy Policy</a><a href="#" class="hover:text-white transition-colors">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('nav-scrolled', window.scrollY > 80);
+  });
+</script>
+</body>
+</html>

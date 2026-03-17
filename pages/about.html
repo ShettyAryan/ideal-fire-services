@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Ideal Fire Services Mumbai</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { primary: '#c20000', 'bg-light': '#f8f5f5', 'bg-dark': '#140a0a' },
+        fontFamily: { display: ['Public Sans', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+<style>
+  * { font-family: 'Public Sans', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined'; }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  #mobile-menu.open { max-height: 400px; }
+  .nav-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+  .timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: #c20000; position: absolute; left: 50%; transform: translateX(-50%); top: 0; box-shadow: 0 0 0 4px rgba(194,0,0,0.15); }
+  .timeline-line { position: absolute; left: 50%; top: 16px; bottom: 0; width: 1px; background: linear-gradient(to bottom, #c20000, rgba(194,0,0,0.1)); transform: translateX(-50%); }
+  .value-card:hover .value-icon { transform: scale(1.15) rotate(5deg); }
+  .value-icon { transition: transform 0.3s; }
+  .pattern-dots { background-image: radial-gradient(circle, rgba(194,0,0,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+</style>
+</head>
+<body class="bg-bg-light text-slate-900">
+
+<!-- NAV -->
+<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-white text-xl">local_fire_department</span>
+        </div>
+        <div>
+          <div class="text-[15px] font-black tracking-tight leading-none text-slate-900 uppercase">Ideal Fire</div>
+          <div class="text-[9px] font-bold tracking-[0.22em] text-primary uppercase mt-0.5">Services Since 1991</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Home</a>
+        <a href="about.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg bg-primary/5">About</a>
+        <a href="services.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Services</a>
+        <a href="projects.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Projects</a>
+        <a href="contact.html" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-lg transition-all">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition-all">
+          <span class="material-symbols-outlined text-base">emergency_share</span>
+          Get Free Audit
+        </a>
+        <button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200">
+          <span id="menu-icon" class="material-symbols-outlined text-xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-slate-100 bg-white">
+    <div class="px-4 py-4 space-y-1">
+      <a href="index.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Home</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-primary bg-primary/5">About</a>
+      <a href="services.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Services</a>
+      <a href="projects.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Projects</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-20 min-h-[55vh] flex items-center overflow-hidden bg-bg-dark">
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkmaeCdDmgZGSXZXr3_hGKCS3HEwXvLySKGoKYE81vkiPxGiJkNmMlU0hiAl_4u5ZmKi14ODgQnfC-lYGHPbipDvOshH4uD5f3p1-GqkPeFLGbP-nM6BZICnk5qir-lqhj_0W9A2eKjmEC2o3dcpJNohmwfzEvnhzAfla-Y5Od6nsDKY5JRQXc_M-2ERNYonVdYjPhkjF4TDW7WH2S8kwqcgZ68A9pshhTwueWxvix7t4a285fVKKpcPAeK5X1XO27IXxDK8yuxWo');"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-bg-dark via-bg-dark/90 to-bg-dark/50"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-bg-light to-transparent"></div>
+  <div class="absolute top-1/3 right-1/3 w-64 h-64 bg-primary/8 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="flex items-center gap-2 text-white/40 text-xs font-bold uppercase tracking-widest mb-6 reveal">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-primary">About Us</span>
+    </div>
+    <div class="max-w-2xl">
+      <div class="reveal reveal-delay-1 inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="text-white/60 text-xs font-bold tracking-[0.2em] uppercase">Our Heritage</span>
+      </div>
+      <h1 class="reveal reveal-delay-2 text-5xl md:text-7xl font-black text-white leading-[1.02] mb-6">
+        Three Decades<br/>of <span class="text-primary italic">Protecting</span><br/>Mumbai.
+      </h1>
+      <p class="reveal reveal-delay-3 text-xl text-white/50 leading-relaxed font-light max-w-lg">
+        From a team of four engineers in 1991 to Mumbai's most trusted fire safety institution — this is our story.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY OVERVIEW -->
+<section class="py-28 bg-bg-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+      <div class="reveal-left">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-0.5 bg-primary"></div>
+          <span class="text-primary font-black uppercase tracking-[0.2em] text-xs">Since 1991</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+          Safeguarding Mumbai<br/>
+          <span class="text-primary italic">Since Day One.</span>
+        </h2>
+        <div class="space-y-4 text-slate-500 text-lg leading-relaxed mb-8">
+          <p>Established in 1991 in the heart of Mumbai, Ideal Fire Services began with a singular focus: to provide uncompromising fire safety solutions to a rapidly growing city. For over three decades, we've evolved from a four-person operation into a comprehensive fire protection partner trusted by Mumbai's most iconic institutions.</p>
+          <p>We specialize in designing, installing, and maintaining state-of-the-art fire suppression systems for industrial, commercial, and residential sectors — always to the highest compliance standards.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-6 p-6 bg-white rounded-xl border border-slate-100 shadow-sm mb-8">
+          <div class="border-l-[3px] border-primary pl-4">
+            <div class="text-4xl font-black text-slate-900">30+</div>
+            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">Years Experience</div>
+          </div>
+          <div class="border-l-[3px] border-primary pl-4">
+            <div class="text-4xl font-black text-slate-900">1,000+</div>
+            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">Projects Completed</div>
+          </div>
+        </div>
+        <a href="projects.html" class="inline-flex items-center gap-2 text-primary font-black text-sm uppercase tracking-wider group hover:gap-3 transition-all">
+          View Our Work <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="reveal-right relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgaLz89TgFsyX0CxDj8pZ0QlLj9rSgY2n3ltAKZegDKxD3yuPwRtLHwpjH2E7U8_eSvULq7_tOZ2cUbJY7gbIp2hBs86Zx40XT4f2vDTyfj-4Lynz4xXqTHxu1YZcdOgA-XUIMBp5-iVDmXW-ZSdPtLFJfSb9Hmb_ka3_mUhLI8sYOUGeT3idjj64RPuRwCVRTfa5OW_C4sEx7EJ5YneJ7N-CXzhv74WexEkuMAxEnwezVOpA8_08wAZR7IZqL34Qxt7oN9ygbIt4"
+               class="w-full h-[480px] object-cover" alt="Fire safety system installation"/>
+        </div>
+        <div class="absolute -bottom-8 -left-8 bg-bg-dark text-white p-6 rounded-xl shadow-2xl hidden sm:block">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-black text-sm">IFS</div>
+            <div>
+              <div class="text-xs font-black uppercase tracking-wider">Maharashtra</div>
+              <div class="text-xs text-slate-400">Licensed Agency</div>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-primary text-lg">star</span>
+            <span class="material-symbols-outlined text-primary text-lg">star</span>
+            <span class="material-symbols-outlined text-primary text-lg">star</span>
+            <span class="material-symbols-outlined text-primary text-lg">star</span>
+            <span class="material-symbols-outlined text-primary text-lg">star</span>
+          </div>
+        </div>
+        <div class="absolute -top-8 -right-8 w-28 h-28 pattern-dots rounded-xl opacity-60"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-12 h-0.5 bg-primary"></div>
+        <span class="text-primary font-black uppercase tracking-[0.2em] text-xs">Our Purpose</span>
+        <div class="w-12 h-0.5 bg-primary"></div>
+      </div>
+      <h2 class="text-4xl font-black text-slate-900">What Drives Us Forward</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="reveal reveal-delay-1 bg-bg-light rounded-2xl p-10 border-t-4 border-primary hover:shadow-xl transition-all duration-400 group">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors">target</span>
+        </div>
+        <h3 class="text-2xl font-black text-slate-900 mb-4">Our Mission</h3>
+        <p class="text-slate-500 leading-relaxed text-lg italic">
+          "To provide reliable fire protection systems and compliance services that empower businesses and communities in Mumbai to operate with absolute safety and peace of mind through professional expertise and technological excellence."
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2 bg-bg-light rounded-2xl p-10 border-t-4 border-primary hover:shadow-xl transition-all duration-400 group">
+        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors">visibility</span>
+        </div>
+        <h3 class="text-2xl font-black text-slate-900 mb-4">Our Vision</h3>
+        <p class="text-slate-500 leading-relaxed text-lg italic">
+          "To be Mumbai's most trusted and respected fire safety partner, recognized for our commitment to quality workmanship, ethical practices, and the continuous advancement of life-safety standards in the urban environment."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="py-28 bg-bg-light overflow-hidden">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-12 h-0.5 bg-primary"></div>
+        <span class="text-primary font-black uppercase tracking-[0.2em] text-xs">Our Journey</span>
+        <div class="w-12 h-0.5 bg-primary"></div>
+      </div>
+      <h2 class="text-4xl font-black text-slate-900">Three Decades of Growth</h2>
+    </div>
+
+    <!-- Timeline items -->
+    <div class="space-y-20">
+
+      <!-- 1991–2000 -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-black mb-4">1991 — 2000</span>
+          <h3 class="text-3xl font-black text-slate-900 mb-4">The Foundation Years</h3>
+          <p class="text-slate-500 leading-relaxed text-lg">Founded in Mumbai with a team of four dedicated engineers. We focused on fire extinguisher maintenance and residential fire safety audits, quickly building a reputation for meticulous attention to detail and honest service. Word spread fast in a city that needed reliable safety partners.</p>
+          <div class="flex items-center gap-4 mt-6 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+            <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+            <div>
+              <div class="font-black text-slate-900">4 Engineers</div>
+              <div class="text-xs text-slate-400">Founded with a small but dedicated team</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe_HwUWEdb3oWeGVIF5W5arSWfQeZfTpg0jD1p3-NHN_YmDb0JllAAsTQOpkPG4zDlu8d-1rLItZvWsnhbwcbEsj78O8OdZ3WGPDdBjFlbBLQyFjrW-E2e3NfkMM0w7H-280r6MY1OHO3-CWKOxJ5kPgPAx1BGIv4fKGgTPyCdMSt-c9umV8Z0a_DsLkB2Dznm9exDnHTlH7YzaKMdUn9UE7c-lu81ot9fbXrYMCG5iXzn1-2mxyzLHLen5xapBOVq3XzFAyVrnXg"
+               class="w-full h-72 object-cover" alt="The early years"/>
+        </div>
+      </div>
+
+      <!-- Red divider -->
+      <div class="flex items-center gap-4 reveal">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <div class="w-3 h-3 rounded-full bg-primary"></div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <!-- 2001–2015 -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 reveal-left rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcrxeTXDYoBUvpVqgt2PtPu4gpz6emq0OUCRCtUt4Sd8nBNYmj11u33xDsKkqDac6Vy7zJmjwImb3do1K5ICTVvA_zc9J__iQazwe11s2HjxNu2_82HzXF8shanThp9gUQZDjFjhphcjXJ02kUWIhvbOC5BU4IM_ZEBBE8JplI3hOQrY5rX5Y4wIR_Wpj3Mkl_rE714mw1wQcFLsrdBCCe2s7Uj-S4M7yGgB9care8_GL-hdmd2bVn6FrvdaPrS3SZQ1U8snZ605s"
+               class="w-full h-72 object-cover" alt="Expanding horizons"/>
+        </div>
+        <div class="order-1 md:order-2 reveal-right">
+          <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-black mb-4">2001 — 2015</span>
+          <h3 class="text-3xl font-black text-slate-900 mb-4">Expanding Horizons</h3>
+          <p class="text-slate-500 leading-relaxed text-lg">Expansion into industrial fire suppression systems and major corporate contracts. We moved to our current Goregaon headquarters, doubled our technical workforce, and incorporated advanced CAD design for complex fire sprinkler networks serving Mumbai's growing skyline.</p>
+          <div class="flex items-center gap-4 mt-6 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+            <span class="material-symbols-outlined text-primary text-3xl">apartment</span>
+            <div>
+              <div class="font-black text-slate-900">Corporate Breakthrough</div>
+              <div class="text-xs text-slate-400">First major industrial & high-rise contracts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Red divider -->
+      <div class="flex items-center gap-4 reveal">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <div class="w-3 h-3 rounded-full bg-primary"></div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <!-- Present Day -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <span class="inline-block bg-primary text-white px-4 py-1.5 rounded-full text-sm font-black mb-4">Present Day</span>
+          <h3 class="text-3xl font-black text-slate-900 mb-4">Modern Leadership</h3>
+          <p class="text-slate-500 leading-relaxed text-lg">Today, Ideal Fire Services is a digitally-integrated safety firm. We use real-time monitoring and IoT sensors to ensure the fire safety systems of Mumbai's most iconic landmarks are always operational and fully compliant with the latest fire codes.</p>
+          <div class="flex items-center gap-4 mt-6 p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+            <span class="material-symbols-outlined text-primary text-3xl">sensors</span>
+            <div>
+              <div class="font-black text-slate-900">IoT-Integrated Monitoring</div>
+              <div class="text-xs text-slate-400">Real-time safety systems across the city</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right rounded-2xl overflow-hidden shadow-xl">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbb3JaimJUeMyee1zd0XXybr5lk5_HU3nyeuk0jDF3Y1C2GJVv1FHA_xppqrWrXr7ZcNPTSIBXy1eMgpZ9LRxMXGrFHwvp-qLi45O2Yb9iQ2_8IWPJiNNFRb3XAKXQYw2W3jQHbFVUERcMCoSA3samQExx75ot9mNiKfVhXwPFlHz9I1EUE47uHHWNtyjfYslyxTDrTwMdn3YK1MB2UFtn34daanQNKkWAvVsaga9bO1gTZRaXZa6zCBvJKpISy0DbjbuijghHiw"
+               class="w-full h-72 object-cover" alt="Modern leadership"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="py-24 bg-bg-dark relative overflow-hidden">
+  <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+  <div class="absolute inset-0 opacity-5 text-white text-[300px] font-black flex items-center justify-end pr-10 leading-none select-none overflow-hidden">IFS</div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-12 h-0.5 bg-primary"></div>
+        <span class="text-primary font-black uppercase tracking-[0.2em] text-xs">What We Stand For</span>
+        <div class="w-12 h-0.5 bg-primary"></div>
+      </div>
+      <h2 class="text-4xl font-black text-white">Our Core Values</h2>
+      <p class="text-slate-500 mt-3">The pillars that uphold our promise to the city of Mumbai.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="value-card reveal reveal-delay-1 text-center p-8 border border-white/8 rounded-2xl hover:bg-white/5 hover:border-primary/30 transition-all duration-300">
+        <div class="value-icon w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+        </div>
+        <h3 class="text-xl font-black text-white mb-3">Uncompromising Quality</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">We use only certified, high-grade materials and equipment to ensure systems perform exactly when it matters most — during an emergency.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2 text-center p-8 border border-white/8 rounded-2xl hover:bg-white/5 hover:border-primary/30 transition-all duration-300">
+        <div class="value-icon w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+        </div>
+        <h3 class="text-xl font-black text-white mb-3">Professionalism</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Our engineers are trained to the highest ethical and technical standards, ensuring reliable, on-time project delivery every single time.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-3 text-center p-8 border border-white/8 rounded-2xl hover:bg-white/5 hover:border-primary/30 transition-all duration-300">
+        <div class="value-icon w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+        </div>
+        <h3 class="text-xl font-black text-white mb-3">Compliance Excellence</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Deep expertise in Mumbai Fire Brigade norms and international NFPA standards for absolute regulatory adherence at every project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-primary relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute -top-20 -right-20 w-96 h-96 border-[40px] border-white rounded-full"></div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 text-center relative z-10 reveal">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">Ready to Work Together?</h2>
+    <p class="text-white/70 text-lg mb-10">Get in touch for a free site audit and compliance consultation.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="contact.html" class="w-full sm:w-auto bg-white text-primary px-10 py-4 rounded-lg text-base font-black hover:bg-slate-100 transition-all shadow-xl">Contact Us</a>
+      <a href="projects.html" class="w-full sm:w-auto bg-white/10 border border-white/20 text-white px-10 py-4 rounded-lg text-base font-bold hover:bg-white/20 transition-all">Our Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-bg-dark text-slate-400 pt-20 pb-8 border-t-4 border-primary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl">local_fire_department</span></div>
+          <div><div class="text-white font-black text-base uppercase">Ideal Fire</div><div class="text-primary text-[9px] font-bold tracking-[0.2em] uppercase">Services Since 1991</div></div>
+        </div>
+        <p class="text-sm leading-relaxed">Pioneering fire safety in Mumbai for over three decades.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Navigation</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-primary transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Services</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="services.html" class="hover:text-primary transition-colors">Hydrant Systems</a></li>
+          <li><a href="services.html" class="hover:text-primary transition-colors">Sprinkler Installation</a></li>
+          <li><a href="services.html" class="hover:text-primary transition-colors">Fire Alarms</a></li>
+          <li><a href="services.html" class="hover:text-primary transition-colors">AMC Plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black text-sm uppercase tracking-widest mb-6">Contact</h4>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span><span>Goregaon West, Mumbai - 400104</span></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">phone_in_talk</span><a href="tel:+912228000000" class="hover:text-primary transition-colors">+91 22 2800 0000</a></li>
+          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">mail</span><a href="mailto:info@idealfiremumbai.com" class="hover:text-primary transition-colors">info@idealfiremumbai.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 uppercase tracking-widest font-medium">
+      <p>© 2024 Ideal Fire Services. All Rights Reserved.</p>
+      <div class="flex gap-8"><a href="#" class="hover:text-white transition-colors">Privacy Policy</a><a href="#" class="hover:text-white transition-colors">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('nav-scrolled', window.scrollY > 80);
+  });
+</script>
+</body>
+</html>
