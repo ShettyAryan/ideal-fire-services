@@ -39,6 +39,20 @@ const services = [
   },
 ]
 
+// Product images for "Products We Work With" marquee
+// Add your product images to the /public/images folder and list them here (exclude the logo).
+const productImages: string[] = [
+  '/images/product1.jpg',
+  '/images/product2.jpg',
+  '/images/product3.jpg',
+  '/images/product4.jpg',
+  '/images/product5.png',
+  '/images/product6.png',
+  '/images/product7.jpg',
+  '/images/product8.jpg',
+  '/images/product9.jpeg',
+]
+
 const stats = [
   { value: 34, suffix: '+', label: 'Years of Experience' },
   { value: 200, suffix: '+', label: 'Projects Completed' },
@@ -354,6 +368,55 @@ export default function Home() {
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── PRODUCTS WE WORK WITH ─────────────────────────────── */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <div className="text-center mb-10">
+            <div className="section-label justify-center mb-4 reveal">
+              <span className="text-primary font-bold uppercase tracking-widest text-sm">
+                Products We Work With
+              </span>
+              <div className="h-[2px] w-10 bg-primary" />
+            </div>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto reveal delay-100">
+              Certified, trusted fire safety products and hardware we integrate into our projects.
+            </p>
+          </div>
+
+          {productImages.length > 0 && (
+            <div className="overflow-hidden">
+              <div className="marquee-track items-center gap-10">
+                {productImages.map((src, i) => (
+                  <div
+                    key={src + i}
+                    className="shrink-0 flex items-center justify-center"
+                  >
+                    <img
+                      src={src}
+                      alt="Fire safety product"
+                      className="h-32 sm:h-40 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ))}
+                {/* duplicate for seamless loop */}
+                {productImages.map((src, i) => (
+                  <div
+                    key={src + 'dup' + i}
+                    className="shrink-0 flex items-center justify-center"
+                  >
+                    <img
+                      src={src}
+                      alt="Fire safety product"
+                      className="h-32 sm:h-40 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
