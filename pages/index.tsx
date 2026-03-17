@@ -16,7 +16,7 @@ const services = [
   {
     icon: 'construction',
     title: 'System Installation',
-    desc: 'End-to-end installation of hydrant and sprinkler systems for residential, commercial, and industrial sites.',
+    desc: 'End-to-end installation of fire detection and protection systems for residential, commercial, and industrial sites.',
     tag: 'INSTALLATION',
   },
   {
@@ -48,10 +48,10 @@ const stats = [
 
 const whyUs = [
   { icon: 'verified', title: 'Govt. Certified', desc: 'Licensed by Maharashtra Fire Department.' },
-  { icon: 'gavel', title: 'NBC 2016 Compliant', desc: 'Adherence to all national building codes.' },
-  { icon: 'support_agent', title: '24/7 Response', desc: 'Emergency on-site within 4 hours.' },
+  { icon: 'gavel', title: 'Compliance Ready', desc: 'Adherence to all national building codes.' },
+  { icon: 'support_agent', title: 'Fast Response', desc: ' Available for emergency on-site' },
   { icon: 'workspace_premium', title: 'ISI & UL Hardware', desc: 'Only certified grade A materials.' },
-  { icon: 'groups', title: 'Expert Team', desc: '50+ trained fire safety engineers.' },
+  { icon: 'groups', title: 'Skilled Technicians', desc: 'Best team to deliver the best results.' },
   { icon: 'currency_rupee', title: 'Competitive Rates', desc: 'Best value without compromise.' },
 ]
 
@@ -107,8 +107,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Ideal Fire Services | Mumbai's Trusted Fire Safety Experts Since 1991</title>
-        <meta name="description" content="Ideal Fire Services — Mumbai's premier fire safety company. Installation, AMC, detection systems, and compliance." />
+        <title>
+          Ideal Fire Services | Mumbai's Trusted Fire Safety Experts Since 1991
+        </title>
+        <meta
+          name="description"
+          content="Ideal Fire Services — Mumbai's premier fire safety company. Installation, AMC, detection systems, and compliance."
+        />
       </Head>
 
       <div ref={cursorRef} className="cursor-glow hidden lg:block" />
@@ -133,7 +138,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div
               className="inline-flex items-center gap-2 border border-primary/40 bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8"
-              style={{ animation: 'fadeUp 0.7s 0.2s ease both' }}
+              style={{ animation: "fadeUp 0.7s 0.2s ease both" }}
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-white/90 text-xs font-bold tracking-[0.2em] uppercase">
@@ -143,7 +148,7 @@ export default function Home() {
 
             <h1
               className="font-display text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[0.95] mb-6 uppercase"
-              style={{ animation: 'fadeUp 0.8s 0.35s ease both' }}
+              style={{ animation: "fadeUp 0.8s 0.35s ease both" }}
             >
               Your Go to Fire
               <br />
@@ -154,20 +159,24 @@ export default function Home() {
 
             <p
               className="text-lg text-slate-300 max-w-xl leading-relaxed mb-10"
-              style={{ animation: 'fadeUp 0.8s 0.5s ease both' }}
+              style={{ animation: "fadeUp 0.8s 0.5s ease both" }}
             >
-              Protecting Mumbai's skyline for over 30 years. Expert fire prevention, detection, and emergency response systems for every sector.
+              Protecting Mumbai's skyline for over 30 years. Expert fire
+              prevention, detection, and emergency response systems for every
+              sector.
             </p>
 
             <div
               className="flex flex-col sm:flex-row items-start gap-4"
-              style={{ animation: 'fadeUp 0.8s 0.65s ease both' }}
+              style={{ animation: "fadeUp 0.8s 0.65s ease both" }}
             >
               <Link
                 href="/contact"
                 className="btn-glow inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold tracking-wide transition-all duration-300 shadow-xl shadow-primary/30"
               >
-                <span className="material-symbols-outlined">emergency_share</span>
+                <span className="material-symbols-outlined">
+                  emergency_share
+                </span>
                 Get a Free Quote
               </Link>
               <Link
@@ -195,9 +204,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-slate-100">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center lg:px-8 reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div
+                key={i}
+                className="text-center lg:px-8 reveal"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
                 <CountUp target={stat.value} suffix={stat.suffix} />
-                <div className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">{stat.label}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -210,23 +225,43 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1">
               <div className="section-label mb-4 reveal-left">
-                <span className="text-primary font-bold uppercase tracking-widest text-sm">Established 1991</span>
+                <span className="text-primary font-bold uppercase tracking-widest text-sm">
+                  Established 1991
+                </span>
               </div>
               <h2 className="font-display text-5xl lg:text-6xl font-black text-slate-900 uppercase leading-tight mb-6 reveal-left delay-100">
-                About Ideal<br />Fire Services
+                About Ideal
+                <br />
+                Fire Services
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-8 reveal delay-200">
-                Based in the heart of Mumbai, Ideal Fire Services has been a pioneer in comprehensive fire safety solutions for over three decades. We specialize in designing, installing, and maintaining world-class fire fighting systems that strictly comply with local and international standards.
+                Based in the heart of Mumbai, Ideal Fire Services has been a
+                pioneer in comprehensive fire safety solutions for over three
+                decades. We specialize in designing, installing, and maintaining
+                world-class fire fighting systems that strictly comply with
+                local and international standards.
               </p>
-              <blockquote className="border-l-4 border-primary pl-6 italic text-slate-600 mb-10 reveal delay-300">
-                "Our mission is simple: To provide uncompromising fire safety through technical excellence and professional integrity."
+              <blockquote className="border-l-4 border-primary pl-6 italic text-slate-600 mb-5 reveal delay-300">
+                "Our mission is simple: To provide uncompromising fire safety
+                through technical excellence and professional integrity."
               </blockquote>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/40 text-[0.7rem] font-black tracking-[0.3em] uppercase text-primary mb-8 reveal-left delay-350">
+                <span
+                  className="material-symbols-outlined text-[0.9rem]"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  verified
+                </span>
+                <span>LICENSE NO - MFS/LA/RF-124/RD 127</span>
+              </div>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all duration-300 group reveal delay-400"
               >
                 Learn About Our Journey
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
               </Link>
             </div>
 
@@ -242,10 +277,17 @@ export default function Home() {
               {/* Badge */}
               <div className="absolute -bottom-6 -left-6 bg-[#0f0505] p-6 rounded-2xl shadow-2xl hidden sm:flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                  <span
+                    className="material-symbols-outlined text-white"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    verified
+                  </span>
                 </div>
                 <div>
-                  <div className="text-white font-bold text-sm">Approved Safety</div>
+                  <div className="text-white font-bold text-sm">
+                    Approved Safety
+                  </div>
                   <div className="text-slate-400 text-xs">Fire Consultants</div>
                 </div>
               </div>
@@ -259,7 +301,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-16">
             <div className="section-label justify-center mb-4 reveal">
-              <span className="text-primary font-bold uppercase tracking-widest text-sm">Our Core Expertise</span>
+              <span className="text-primary font-bold uppercase tracking-widest text-sm">
+                Our Core Expertise
+              </span>
               <div className="h-[2px] w-10 bg-primary" />
             </div>
             <h2 className="font-display text-5xl lg:text-6xl font-black text-slate-900 uppercase reveal delay-100">
@@ -271,19 +315,31 @@ export default function Home() {
             {services.map((s, i) => (
               <div
                 key={i}
-                className="group bg-bg-light border border-slate-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-400 cursor-pointer reveal"
+                className="group bg-bg-light border border-slate-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-400 cursor-pointer reveal flex flex-col h-full"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="inline-flex items-center gap-2 bg-primary/10 px-2 py-1 rounded text-xs font-black tracking-widest text-primary mb-5">
+                <div className="inline-flex items-center gap-2 bg-primary/10 px-2 py-1 rounded text-xs font-black  text-primary mb-5 self-start">
                   {s.tag}
                 </div>
                 <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
-                  <span className="material-symbols-outlined text-white text-2xl">{s.icon}</span>
+                  <span className="material-symbols-outlined text-white text-2xl">
+                    {s.icon}
+                  </span>
                 </div>
-                <h3 className="font-display text-2xl font-black text-slate-900 uppercase mb-3">{s.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">{s.desc}</p>
-                <Link href="/services" className="inline-flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-3 transition-all duration-300">
-                  Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <h3 className="font-display text-2xl font-black text-slate-900 uppercase mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+                <Link
+                  href="/services"
+                  className="mt-auto inline-flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-3 transition-all duration-300"
+                >
+                  Learn More{" "}
+                  <span className="material-symbols-outlined text-sm">
+                    arrow_forward
+                  </span>
                 </Link>
               </div>
             ))}
@@ -303,31 +359,49 @@ export default function Home() {
 
       {/* ── WHY CHOOSE US ─────────────────────────────────────── */}
       <section className="py-28 bg-[#0f0505] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c20000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c20000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <div className="section-label mb-4 reveal-left">
-                <span className="text-primary font-bold uppercase tracking-widest text-sm">Why Choose Us</span>
+                <span className="text-primary font-bold uppercase tracking-widest text-sm">
+                  Why Choose Us
+                </span>
               </div>
               <h2 className="font-display text-5xl lg:text-6xl font-black text-white uppercase leading-tight mb-6 reveal-left delay-100">
-                Why Ideal<br />Fire Services?
+                Why Ideal
+                <br />
+                Fire Services?
               </h2>
               <p className="text-slate-400 text-lg mb-10 reveal-left delay-200">
-                We don't just install equipment; we build a shield of safety around your property using industry-leading practices.
+                We don't just install equipment; we build a shield of safety
+                around your property using industry-leading practices.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {whyUs.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 reveal"
+                    style={{ transitionDelay: `${i * 0.08}s` }}
+                  >
                     <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
-                      <span className="material-symbols-outlined text-primary text-base">{item.icon}</span>
+                      <span className="material-symbols-outlined text-primary text-base">
+                        {item.icon}
+                      </span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-white text-sm">{item.title}</h4>
-                      <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
+                      <h4 className="font-bold text-white text-sm">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -337,29 +411,49 @@ export default function Home() {
             <div className="reveal-right">
               <div className="bg-white/5 border border-white/10 rounded-3xl p-10">
                 <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-white text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>shield</span>
+                  <span
+                    className="material-symbols-outlined text-white text-3xl"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    shield
+                  </span>
                 </div>
                 <h3 className="font-display text-4xl font-black text-white uppercase mb-4">
-                  Protecting Your<br />Legacy Since 1991
+                  Protecting Your
+                  <br />
+                  Legacy Since 1991
                 </h3>
                 <p className="text-slate-400 leading-relaxed mb-8">
-                  We understand the critical nature of fire safety. Our legacy is built on the trust of thousands of clients across Mumbai — from residential complexes to iconic industrial landmarks.
+                  We understand the critical nature of fire safety. Our legacy
+                  is built on the trust of hundreds of clients across Mumbai —
+                  from residential complexes to iconic industrial landmarks.
                 </p>
                 <div className="bg-white/8 backdrop-blur-md p-5 rounded-2xl border border-white/15">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center font-black text-white font-display text-sm">IFS</div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center font-black text-white font-display text-sm">
+                      IFS
+                    </div>
                     <div>
-                      <div className="text-white font-bold text-sm">Certified Fire Safety Agency</div>
-                      <div className="text-slate-400 text-xs tracking-widest uppercase mt-0.5">Maharashtra Licensed</div>
+                      <div className="text-white font-bold text-sm">
+                        Certified Fire Safety Agency
+                      </div>
+                      <div className="text-slate-400 text-xs tracking-widest uppercase mt-0.5">
+                        Maharashtra Fire Department Licensed
+                      </div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {['ISO 9001', 'NFPA', 'NBC 2016'].map((cert) => (
-                      <div key={cert} className="text-center py-2 rounded-lg bg-white/5 border border-white/10">
-                        <div className="text-white text-xs font-black">{cert}</div>
+                  {/* <div className="grid grid-cols-3 gap-3">
+                    {["Maharashtre Fire Department Approved"].map((cert) => (
+                      <div
+                        key={cert}
+                        className="text-center py-2 rounded-lg bg-white/5 border border-white/10"
+                      >
+                        <div className="text-white text-xs font-black">
+                          {cert}
+                        </div>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -391,21 +485,22 @@ export default function Home() {
             Need Immediate Fire Safety Assistance?
           </h2>
           <p className="text-white/80 text-lg max-w-xl mx-auto mb-10 reveal delay-100">
-            Contact our expert consultants for a comprehensive fire safety audit of your premises.
+            Contact our expert consultants for a comprehensive fire safety audit
+            of your premises.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 reveal delay-200">
             <Link
               href="/contact"
-              className="w-full sm:w-auto bg-white text-primary hover:bg-slate-100 px-10 py-4 rounded-lg font-black tracking-wide transition-all duration-300 shadow-xl"
+              className="w-full sm:w-auto bg-white text-primary hover:bg-slate-100 hover:scale-105 px-10 py-4 rounded-lg font-black tracking-wide transition-all duration-300 shadow-xl"
             >
               Request Consultation
             </Link>
             <a
-              href="tel:+912212345678"
-              className="w-full sm:w-auto bg-[#0f0505] text-white hover:bg-slate-900 px-10 py-4 rounded-lg font-black tracking-wide transition-all duration-300 shadow-xl flex items-center justify-center gap-3"
+              href="tel:+919619969323"
+              className="w-full sm:w-auto bg-[#0f0505] text-white hover:scale-105 hover:bg-slate-900 px-10 py-4 rounded-lg font-black tracking-wide transition-all duration-300 shadow-xl flex items-center justify-center gap-3"
             >
               <span className="material-symbols-outlined">phone</span>
-              Call: +91 22 1234 5678
+              Call: +91 9619969323
             </a>
           </div>
         </div>
@@ -413,5 +508,5 @@ export default function Home() {
 
       <Footer />
     </>
-  )
+  );
 }

@@ -12,31 +12,48 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                   local_fire_department
                 </span>
-              </div>
+              </div> */}
+              <img
+                src="https://res.cloudinary.com/dsvgadc5d/image/upload/v1773683566/Ideal_Fire_Services_grhcsp.png"
+                alt="Ideal Fire Services"
+                className="w-10 h-10"
+              />
               <div>
                 <div className="font-display text-xl font-black tracking-wider text-white leading-none uppercase">
-                  Ideal Fire
+                  Ideal Fire Services
                 </div>
                 <div className="text-[9px] font-bold tracking-[0.25em] text-primary uppercase">
-                  Services Since 1991
+                  Since 1991
                 </div>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-500 mb-6 max-w-xs">
-              Pioneering fire safety in Mumbai since 1991. Protecting lives and property with technical excellence and professional integrity.
+              Pioneering fire safety in Mumbai since 1991. Protecting lives and
+              property with technical excellence and professional integrity.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white">
-                <span className="material-symbols-outlined text-sm">language</span>
+              <a
+                href="#"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white"
+              >
+                <span className="material-symbols-outlined text-sm">
+                  language
+                </span>
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white">
+              <a
+                href="mailto:idealfire06@yahoo.com"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white"
+              >
                 <span className="material-symbols-outlined text-sm">mail</span>
               </a>
-              <a href="tel:+912212345678" className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white">
+              <a
+                href="tel:+919619969323"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300 text-slate-400 hover:text-white"
+              >
                 <span className="material-symbols-outlined text-sm">phone</span>
               </a>
             </div>
@@ -44,17 +61,22 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigate</h5>
+            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
+              Navigate
+            </h5>
             <ul className="space-y-3">
               {[
-                { href: '/', label: 'Home' },
-                { href: '/about', label: 'About Us' },
-                { href: '/services', label: 'Services' },
-                { href: '/projects', label: 'Projects' },
-                { href: '/contact', label: 'Contact' },
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About Us" },
+                { href: "/services", label: "Services" },
+                { href: "/projects", label: "Projects" },
+                { href: "/contact", label: "Contact" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm hover:text-primary transition-colors duration-200 flex items-center gap-2 group">
+                  <Link
+                    href={l.href}
+                    className="text-sm hover:text-primary transition-colors duration-200 flex items-center gap-2 group"
+                  >
                     <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                     {l.label}
                   </Link>
@@ -65,18 +87,23 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Services</h5>
+            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
+              Services
+            </h5>
             <ul className="space-y-3">
               {[
-                'Fire Hydrant Systems',
-                'Automatic Sprinklers',
-                'Smoke Detection',
-                'Annual Maintenance (AMC)',
-                'Fire Safety Audits',
-                'Compliance Certificates',
+                "Fire Hydrant Systems",
+                "Automatic Sprinklers",
+                "Smoke Detection",
+                "Annual Maintenance (AMC)",
+                "Fire Safety Audits",
+                "Extinguisher Supply & Refilling",
               ].map((s) => (
                 <li key={s}>
-                  <Link href="/services" className="text-sm hover:text-primary transition-colors duration-200 flex items-center gap-2 group">
+                  <Link
+                    href="/services"
+                    className="text-sm hover:text-primary transition-colors duration-200 flex items-center gap-2 group"
+                  >
                     <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                     {s}
                   </Link>
@@ -87,22 +114,52 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Contact</h5>
+            <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
+              Contact
+            </h5>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">location_on</span>
-                <span className="text-sm leading-relaxed">Plot 45, Industrial Estate, Off Link Road,<br />Goregaon West, Mumbai 400104</span>
+                <span className="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">
+                  location_on
+                </span>
+                <span className="text-sm leading-relaxed">
+                  204A, B Wing, Sumit Samarth Arcade,Aarey Road,
+                  <br />
+                  Goregaon West, Mumbai 400104
+                </span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-base shrink-0">phone</span>
-                <a href="tel:+912212345678" className="text-sm hover:text-primary transition-colors">+91 22 1234 5678</a>
+                <span className="material-symbols-outlined text-primary text-base shrink-0">
+                  phone
+                </span>
+                <a
+                  href="tel:+919820612528"
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  +91 9820612528
+                </a>
+                <a
+                  href="tel:+919619969323"
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  +91 9619969323
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-base shrink-0">mail</span>
-                <a href="mailto:info@idealfire.in" className="text-sm hover:text-primary transition-colors">info@idealfire.in</a>
+                <span className="material-symbols-outlined text-primary text-base shrink-0">
+                  mail
+                </span>
+                <a
+                  href="mailto:idealfire06@yahoo.com"
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  idealfire06@yahoo.com
+                </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-base shrink-0">schedule</span>
+                <span className="material-symbols-outlined text-primary text-base shrink-0">
+                  schedule
+                </span>
                 <span className="text-sm">Mon–Sat: 9:30 AM – 6:00 PM</span>
               </li>
             </ul>
@@ -112,17 +169,23 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-600 uppercase tracking-widest font-medium">
-            © 2024 Ideal Fire Services. All Rights Reserved.
+            © 2026 Ideal Fire Services. All Rights Reserved.
           </p>
           <div className="flex items-center gap-6 text-xs text-slate-600 uppercase tracking-widest font-medium">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
             <span className="w-px h-3 bg-slate-700" />
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Service
+            </a>
             <span className="w-px h-3 bg-slate-700" />
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+            <a href="#" className="hover:text-white transition-colors">
+              Sitemap
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
