@@ -95,7 +95,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-slate-600 text-lg leading-relaxed mb-8 reveal delay-200">
                 <p>
-                  Established in 1991 in the heart of Mumbai, Ideal Fire Services began with a singular focus: to provide uncompromising fire safety solutions to a growing metropolis. For over three decades, we have evolved from a local service provider into a comprehensive fire protection partner.
+                  Established in 1991 in the heart of Mumbai, Ideal Fire Services began with a singular focus: to provide uncompromising fire safety solutions to a growing metropolis. For over three decades, we have evolved from a local service provider into a comprehensive fire protection and detection organisation.
                 </p>
                 <p>
                   Our journey is defined by a commitment to international safety standards and a deep understanding of local compliance needs. We specialize in designing, installing, and maintaining state-of-the-art fire suppression systems for industrial, commercial, and residential sectors.
@@ -103,11 +103,11 @@ export default function About() {
               </div>
               <div className="grid grid-cols-2 gap-6 reveal delay-300">
                 <div className="border-l-4 border-primary pl-5">
-                  <div className="font-display text-4xl font-black text-slate-900">30+</div>
+                  <div className="font-display text-4xl font-black text-slate-900">34</div>
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mt-1">Years Experience</div>
                 </div>
                 <div className="border-l-4 border-primary pl-5">
-                  <div className="font-display text-4xl font-black text-slate-900">1000+</div>
+                  <div className="font-display text-4xl font-black text-slate-900">200+</div>
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mt-1">Projects Completed</div>
                 </div>
               </div>
