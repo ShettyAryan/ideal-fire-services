@@ -165,7 +165,7 @@ export default function Navbar() {
               <span className="material-symbols-outlined text-sm">
                 emergency_share
               </span>
-              Emergency Consultation
+              Get a Quote
             </Link>
           </div>
         </div>
