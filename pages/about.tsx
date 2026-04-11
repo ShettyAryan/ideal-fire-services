@@ -207,15 +207,17 @@ export default function About() {
       {/* ── OUR JOURNEY ───────────────────────────────────────── */}
       <section className="py-24 sm:py-28 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="text-center mb-14 sm:mb-20 max-w-3xl mx-auto">
+          <div className="text-center mb-14 sm:mb-20 max-w-3xl mx-auto group/journey-head">
             <div className="section-label justify-center mb-4 reveal">
-              <span className="text-primary font-bold uppercase tracking-widest text-sm">Our Journey</span>
-              <div className="h-[2px] w-10 bg-primary" />
+              <span className="text-primary font-bold uppercase tracking-widest text-sm transition-colors duration-300 group-hover/journey-head:text-primary-dark">
+                Our Journey
+              </span>
+              <div className="h-[2px] w-10 bg-primary origin-left transition-all duration-500 ease-out group-hover/journey-head:w-14" />
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 uppercase leading-tight reveal delay-100">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 uppercase leading-tight reveal delay-100 transition-colors duration-300 group-hover/journey-head:text-slate-800">
               A Legacy Built on Safety
             </h2>
-            <p className="text-slate-500 text-sm sm:text-base mt-4 leading-relaxed reveal delay-200">
+            <p className="text-slate-500 text-sm sm:text-base mt-4 leading-relaxed reveal delay-200 transition-colors duration-300 group-hover/journey-head:text-slate-600">
               From our first corporate engagements to today&apos;s city-wide footprint—how we evolved while staying true to our purpose.
             </p>
           </div>
@@ -225,45 +227,49 @@ export default function About() {
             {journeyNarrativeBlocks.map((block, i) => (
               <article
                 key={block.heading}
-                className="flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal pt-5"
+                className="group/journey-row flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal pt-5 rounded-xl -mx-2 px-2 sm:-mx-3 sm:px-3 transition-colors duration-300 hover:bg-slate-50/90"
                 style={{ transitionDelay: `${i * 0.06}s` }}
               >
                 <div
-                  className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                  className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5 transition-all duration-300 ease-out shadow-sm shadow-transparent group-hover/journey-row:scale-105 group-hover/journey-row:border-primary/35 group-hover/journey-row:bg-primary/15 group-hover/journey-row:shadow-primary/10"
                   aria-hidden
                 >
-                  <span className="material-symbols-outlined text-primary text-xl">{block.icon}</span>
+                  <span className="material-symbols-outlined text-primary text-xl transition-transform duration-300 ease-out group-hover/journey-row:scale-110">
+                    {block.icon}
+                  </span>
                 </div>
                 <div className="min-w-0 flex-1 pt-0.5">
-                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight transition-colors duration-300 group-hover/journey-row:text-primary">
                     {block.heading}
                   </h3>
-                  <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                  <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3 transition-colors duration-300 group-hover/journey-row:text-slate-700">
                     {block.body}
                   </p>
                 </div>
               </article>
             ))}
 
-            <article className="flex gap-4 sm:gap-5 items-start pt-5 sm:pt-5 pb-12 sm:pb-14 border-b border-slate-100 reveal delay-150">
+            <article className="group/journey-row flex gap-4 sm:gap-5 items-start pt-5 sm:pt-5 pb-12 sm:pb-14 border-b border-slate-100 reveal delay-150 rounded-xl -mx-2 px-2 sm:-mx-3 sm:px-3 transition-colors duration-300 hover:bg-slate-50/90">
               <div
-                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5 transition-all duration-300 ease-out shadow-sm shadow-transparent group-hover/journey-row:scale-105 group-hover/journey-row:border-primary/35 group-hover/journey-row:bg-primary/15 group-hover/journey-row:shadow-primary/10"
                 aria-hidden
               >
-                <span className="material-symbols-outlined text-primary text-xl">corporate_fare</span>
+                <span className="material-symbols-outlined text-primary text-xl transition-transform duration-300 ease-out group-hover/journey-row:scale-110">
+                  corporate_fare
+                </span>
               </div>
               <div className="min-w-0 flex-1 pt-0.5">
-                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight transition-colors duration-300 group-hover/journey-row:text-primary">
                   Trusted by Leading Organizations
                 </h3>
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3 transition-colors duration-300 group-hover/journey-row:text-slate-700">
                   We&apos;ve had the privilege of working with esteemed organizations across industries. Our expertise also extends to leading hospitality brands.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                   {journeyCorporateClients.map((name) => (
                     <div
                       key={name}
-                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left"
+                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white hover:shadow-md hover:shadow-slate-200/80 active:scale-[0.99] cursor-default"
                     >
                       <span className="text-sm font-bold text-slate-900">{name}</span>
                     </div>
@@ -273,41 +279,49 @@ export default function About() {
                   {journeyHospitalityClients.map((name) => (
                     <div
                       key={name}
-                      className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-2"
+                      className="group/pill inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/10 hover:shadow-sm active:scale-[0.98] cursor-default"
                     >
-                      <span className="material-symbols-outlined text-primary text-sm">hotel</span>
-                      <span className="text-xs font-bold uppercase tracking-wide text-slate-800">{name}</span>
+                      <span className="material-symbols-outlined text-primary text-sm transition-transform duration-300 ease-out group-hover/pill:scale-110">
+                        hotel
+                      </span>
+                      <span className="text-xs font-bold uppercase tracking-wide text-slate-800 transition-colors duration-200 group-hover/pill:text-slate-900">
+                        {name}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
             </article>
 
-            <article className="flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal delay-200 pt-5">
+            <article className="group/journey-row flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal delay-200 pt-5 rounded-xl -mx-2 px-2 sm:-mx-3 sm:px-3 transition-colors duration-300 hover:bg-slate-50/90">
               <div
-                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5 transition-all duration-300 ease-out shadow-sm shadow-transparent group-hover/journey-row:scale-105 group-hover/journey-row:border-primary/35 group-hover/journey-row:bg-primary/15 group-hover/journey-row:shadow-primary/10"
                 aria-hidden
               >
-                <span className="material-symbols-outlined text-primary text-xl">apartment</span>
+                <span className="material-symbols-outlined text-primary text-xl transition-transform duration-300 ease-out group-hover/journey-row:scale-110">
+                  apartment
+                </span>
               </div>
               <div className="min-w-0 flex-1 pt-0.5">
-                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight transition-colors duration-300 group-hover/journey-row:text-primary">
                   Serving Residential &amp; Real Estate
                 </h3>
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3 transition-colors duration-300 group-hover/journey-row:text-slate-700">
                   In the residential and real estate sector, we have partnered with reputed developers—building long-term relationships grounded in compliance and care.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                   {journeyResidentialClients.map((name) => (
                     <div
                       key={name}
-                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left"
+                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white hover:shadow-md hover:shadow-slate-200/80 active:scale-[0.99] cursor-default"
                     >
                       <span className="text-sm font-bold text-slate-900">{name}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-slate-500 text-sm mt-4">Among others we are proud to support across the region.</p>
+                <p className="text-slate-500 text-sm mt-4 transition-colors duration-300 group-hover/journey-row:text-slate-600">
+                  Among others we are proud to support across the region.
+                </p>
               </div>
             </article>
 
@@ -315,20 +329,22 @@ export default function About() {
               {journeyClosingBlocks.map((block, i) => (
                 <article
                   key={block.heading}
-                  className="flex gap-4 sm:gap-5 items-start reveal"
+                  className="group/journey-row flex gap-4 sm:gap-5 items-start reveal rounded-xl -mx-2 px-2 sm:-mx-3 sm:px-3 py-1 transition-colors duration-300 hover:bg-slate-50/90"
                   style={{ transitionDelay: `${0.22 + i * 0.06}s` }}
                 >
                   <div
-                    className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                    className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5 transition-all duration-300 ease-out shadow-sm shadow-transparent group-hover/journey-row:scale-105 group-hover/journey-row:border-primary/35 group-hover/journey-row:bg-primary/15 group-hover/journey-row:shadow-primary/10"
                     aria-hidden
                   >
-                    <span className="material-symbols-outlined text-primary text-xl">{block.icon}</span>
+                    <span className="material-symbols-outlined text-primary text-xl transition-transform duration-300 ease-out group-hover/journey-row:scale-110">
+                      {block.icon}
+                    </span>
                   </div>
                   <div className="min-w-0 flex-1 pt-0.5">
-                    <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                    <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight transition-colors duration-300 group-hover/journey-row:text-primary">
                       {block.heading}
                     </h3>
-                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3 transition-colors duration-300 group-hover/journey-row:text-slate-700">
                       {block.body}
                     </p>
                   </div>
