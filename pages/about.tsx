@@ -4,24 +4,71 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollReveal } from '../components/useScrollReveal'
 
-const milestones = [
+const journeyNarrativeBlocks = [
   {
-    period: '1991 – 2000',
-    title: 'The Foundation',
-    desc: 'Founded in Mumbai with a team of four dedicated engineers. We initially focused on fire extinguisher maintenance and small-scale residential fire safety audits, quickly building a reputation for meticulous attention to detail and honest service.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBe_HwUWEdb3oWeGVIF5W5arSWfQeZfTpg0jD1p3-NHN_YmDb0JllAAsTQOpkPG4zDlu8d-1rLItZvWsnhbwcbEsj78O8OdZ3WGPDdBjFlbBLQyFjrW-E2e3NfkMM0w7H-280r6MY1OHO3-CWKOxJ5kPgPAx1BGIv4fKGgTPyCdMSt-c9umV8Z0a_DsLkB2Dznm9exDnHTlH7YzaKMdUn9UE7c-lu81ot9fbXrYMCG5iXzn1-2mxyzLHLen5xapBOVq3XzFAyVrnXg',
+    icon: 'flag' as const,
+    heading: 'Our Beginning',
+    body:
+      'Our journey began in 1991 with a clear vision—to spread awareness and knowledge about fire safety and protection. What started as a focused initiative serving corporate clients laid the foundation for everything we stand for today.',
   },
   {
-    period: '2001 – 2015',
-    title: 'Expanding Horizons',
-    desc: 'Expansion into industrial fire suppression systems and major corporate contracts. We moved to our current headquarters and doubled our technical workforce, incorporating advanced CAD design for complex fire sprinkler networks.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcrxeTXDYoBUvpVqgt2PtPu4gpz6emq0OUCRCtUt4Sd8nBNYmj11u33xDsKkqDac6Vy7zJmjwImb3do1K5ICTVvA_zc9J__iQazwe11s2HjxNu2_82HzXF8shanThp9gUQZDjFjhphcjXJ02kUWIhvbOC5BU4IM_ZEBBE8JplI3hOQrY5rX5Y4wIR_Wpj3Mkl_rE714mw1wQcFLsrdBCCe2s7Uj-S4M7yGgB9care8_GL-hdmd2bVn6FrvdaPrS3SZQ1U8snZ605s',
+    icon: 'shield' as const,
+    heading: 'Our Philosophy',
+    body:
+      'From day one, we have believed that fire safety is not just a service—it is a responsibility. Our mission has always been to deliver reliable solutions, raise awareness, and ensure every space is equipped to safeguard lives and property.',
   },
   {
-    period: 'Present Day',
-    title: 'Modern Leadership',
-    desc: 'Today, Ideal Fire Services is a digitally-integrated safety firm. We use real-time monitoring and IoT sensors to ensure the fire safety systems of Mumbai\'s most iconic landmarks are always operational and fully compliant with the latest fire codes.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDKbb3JaimJUeMyee1zd0XXybr5lk5_HU3nyeuk0jDF3Y1C2GJVv1FHA_xppqrWrXr7ZcNPTSIBXy1eMgpZ9LRxMXGrFHwvp-qLi45O2Yb9iQ2_8IWPJiNNFRb3XAKXQYw2W3jQHbFVUERcMCoSA3samQExx75ot9mNiKfVhXwPFlHz9I1EUE47uHHWNtyjfYslyxTDrTwMdn3YK1MB2UFtn34daanQNKkWAvVsaga9bO1gTZRaXZa6zCBvJKpISy0DbjbuijghHiw',
+    icon: 'trending_up' as const,
+    heading: 'Our Growth',
+    body:
+      'Over the years, we have grown from serving select corporate clients to becoming a trusted name across both corporate and residential sectors, expanding our impact and reach.',
+  },
+]
+
+const journeyCorporateClients = [
+  'Pidilite Industries',
+  'Mahindra & Mahindra',
+  'Godfrey Phillips India',
+  'Golden Tobacco Company',
+  'Matulya Mills',
+  'Bhor Industries',
+  'Shakti Insulated Wires',
+  'Miranda Tools',
+  'Haldyne Glass',
+  'Lyka Labs',
+]
+
+const journeyHospitalityClients = ['Hotel InterContinental', 'Hotel Palmgrove']
+
+const journeyResidentialClients = [
+  'Ajmera Housing Corporation',
+  'Mayfair Housing',
+  'UK Builders',
+  'D.G. Land Developers',
+  'DGS Township',
+  'Wescon Housing',
+  'Sumit Developers',
+  'Toughcons Realtors',
+  'Vastu Creations',
+  'Gayatri Krupa Developers',
+  'Sadguru Krupa Developers',
+  'A & A Developers',
+  'RNA Builders',
+  'NVP Realty',
+]
+
+const journeyClosingBlocks = [
+  {
+    icon: 'workspace_premium' as const,
+    heading: '30+ Years of Expertise',
+    body:
+      'With over three decades of experience, Ideal Fire Services stands for trust, expertise, and a deep-rooted commitment to safety.',
+  },
+  {
+    icon: 'forward' as const,
+    heading: 'Looking Ahead',
+    body:
+      'As we move forward, we remain dedicated to raising fire safety standards and building safer environments for generations to come.',
   },
 ]
 
@@ -157,40 +204,137 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── TIMELINE ──────────────────────────────────────────── */}
-      <section className="py-28 bg-white">
+      {/* ── OUR JOURNEY ───────────────────────────────────────── */}
+      <section className="py-24 sm:py-28 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-14 sm:mb-20 max-w-3xl mx-auto">
             <div className="section-label justify-center mb-4 reveal">
               <span className="text-primary font-bold uppercase tracking-widest text-sm">Our Journey</span>
               <div className="h-[2px] w-10 bg-primary" />
             </div>
-            <h2 className="font-display text-5xl lg:text-6xl font-black text-slate-900 uppercase reveal delay-100">
-              Our Growth Story
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 uppercase leading-tight reveal delay-100">
+              A Legacy Built on Safety
             </h2>
+            <p className="text-slate-500 text-sm sm:text-base mt-4 leading-relaxed reveal delay-200">
+              From our first corporate engagements to today&apos;s city-wide footprint—how we evolved while staying true to our purpose.
+            </p>
           </div>
 
-          <div className="space-y-28">
-            {milestones.map((m, i) => (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row items-center gap-16 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+          {/* Single column: fixed icon rail + content so every H3 shares the same left edge */}
+          <div className="max-w-3xl mx-auto space-y-0">
+            {journeyNarrativeBlocks.map((block, i) => (
+              <article
+                key={block.heading}
+                className="flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal pt-5"
+                style={{ transitionDelay: `${i * 0.06}s` }}
               >
-                <div className="flex-1 reveal-left" style={{ transitionDelay: '0.1s' }}>
-                  <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-black mb-4 tracking-wide">
-                    {m.period}
-                  </span>
-                  <h3 className="font-display text-4xl font-black text-slate-900 uppercase mb-4">{m.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-lg">{m.desc}</p>
+                <div
+                  className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                  aria-hidden
+                >
+                  <span className="material-symbols-outlined text-primary text-xl">{block.icon}</span>
                 </div>
-                <div className="flex-1 reveal-right">
-                  <div className="rounded-2xl overflow-hidden shadow-xl h-72 relative group">
-                    <img src={m.img} alt={m.title} className="w-full h-full object-cover card-image group-hover:scale-105 transition-transform duration-600" />
-                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                  </div>
+                <div className="min-w-0 flex-1 pt-0.5">
+                  <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                    {block.heading}
+                  </h3>
+                  <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                    {block.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+
+            <article className="flex gap-4 sm:gap-5 items-start pt-5 sm:pt-5 pb-12 sm:pb-14 border-b border-slate-100 reveal delay-150">
+              <div
+                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                aria-hidden
+              >
+                <span className="material-symbols-outlined text-primary text-xl">corporate_fare</span>
+              </div>
+              <div className="min-w-0 flex-1 pt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                  Trusted by Leading Organizations
+                </h3>
+                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                  We&apos;ve had the privilege of working with esteemed organizations across industries. Our expertise also extends to leading hospitality brands.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  {journeyCorporateClients.map((name) => (
+                    <div
+                      key={name}
+                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left"
+                    >
+                      <span className="text-sm font-bold text-slate-900">{name}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {journeyHospitalityClients.map((name) => (
+                    <div
+                      key={name}
+                      className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-2"
+                    >
+                      <span className="material-symbols-outlined text-primary text-sm">hotel</span>
+                      <span className="text-xs font-bold uppercase tracking-wide text-slate-800">{name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
+            </article>
+
+            <article className="flex gap-4 sm:gap-5 items-start pb-12 sm:pb-14 border-b border-slate-100 reveal delay-200 pt-5">
+              <div
+                className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                aria-hidden
+              >
+                <span className="material-symbols-outlined text-primary text-xl">apartment</span>
+              </div>
+              <div className="min-w-0 flex-1 pt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                  Serving Residential &amp; Real Estate
+                </h3>
+                <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                  In the residential and real estate sector, we have partnered with reputed developers—building long-term relationships grounded in compliance and care.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  {journeyResidentialClients.map((name) => (
+                    <div
+                      key={name}
+                      className="rounded-xl border border-slate-200 bg-bg-light px-4 py-3 text-left"
+                    >
+                      <span className="text-sm font-bold text-slate-900">{name}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-slate-500 text-sm mt-4">Among others we are proud to support across the region.</p>
+              </div>
+            </article>
+
+            <div className="space-y-12 sm:space-y-14 pt-12 sm:pt-14">
+              {journeyClosingBlocks.map((block, i) => (
+                <article
+                  key={block.heading}
+                  className="flex gap-4 sm:gap-5 items-start reveal"
+                  style={{ transitionDelay: `${0.22 + i * 0.06}s` }}
+                >
+                  <div
+                    className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mt-0.5"
+                    aria-hidden
+                  >
+                    <span className="material-symbols-outlined text-primary text-xl">{block.icon}</span>
+                  </div>
+                  <div className="min-w-0 flex-1 pt-0.5">
+                    <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-tight">
+                      {block.heading}
+                    </h3>
+                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed mt-3">
+                      {block.body}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -226,7 +370,7 @@ export default function About() {
       </section>
 
       {/* ── TEAM ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-bg-light">
+      {/* <section className="py-24 bg-bg-light">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-16">
             <div className="section-label justify-center mb-4 reveal">
@@ -259,7 +403,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 bg-primary relative overflow-hidden">
