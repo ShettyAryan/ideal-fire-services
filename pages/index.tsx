@@ -5,11 +5,21 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollReveal } from '../components/useScrollReveal'
 
-const clients = [
-  'HDFC BANK', 'RELIANCE INDUSTRIES', 'LODHA GROUP', 'GODREJ PROPERTIES',
-  'TATA POWER', 'MUMBAI PORT TRUST', 'L&T REALTY', 'MAHINDRA LIFESPACES',
-  'HDFC BANK', 'RELIANCE INDUSTRIES', 'LODHA GROUP', 'GODREJ PROPERTIES',
-  'TATA POWER', 'MUMBAI PORT TRUST', 'L&T REALTY', 'MAHINDRA LIFESPACES',
+/** Client logos in /public/companylogos — duplicated in marquee for seamless loop */
+const clientLogos = [
+  { src: '/companylogos/pidilite.jpg', alt: 'Pidilite Industries' },
+  { src: '/companylogos/Mahindra.png', alt: 'Mahindra & Mahindra' },
+  { src: '/companylogos/Godfrey_phillips_logo.png', alt: 'Godfrey Phillips India' },
+  { src: '/companylogos/ajmera.png', alt: 'Ajmera Housing Corporation' },
+  { src: '/companylogos/mayfair.png', alt: 'Mayfair Housing' },
+  { src: '/companylogos/ukbuilders.png', alt: 'UK Builders' },
+  { src: '/companylogos/DGS.jpg', alt: 'DGS Township' },
+  { src: '/companylogos/sumit.png', alt: 'Sumit Developers' },
+  { src: '/companylogos/toughcon.jpg', alt: 'Toughcons Realtors' },
+  { src: '/companylogos/Miranda%20Tools.png', alt: 'Miranda Tools' },
+  { src: '/companylogos/Haldyn.jpg', alt: 'Haldyne Glass' },
+  { src: '/companylogos/lyka.png', alt: 'Lyka Labs' },
+  { src: '/companylogos/InterContinental.png', alt: 'Hotel InterContinental' },
 ]
 
 const services = [
@@ -310,6 +320,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CLIENT LOGO MARQUEE ───────────────────────────────── */}
+      <section
+        className="pt-12 sm:pt-16 pb-14 sm:pb-16 bg-bg-light border-y border-slate-200 overflow-hidden"
+        aria-label="Trusted client logos"
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 text-center mb-10 sm:mb-12">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 uppercase leading-tight reveal">
+            Our Clients
+          </h2>
+          <div className="mt-4 flex justify-center">
+            <div className="h-1 w-16 sm:w-20 bg-primary rounded-full reveal delay-100" />
+          </div>
+        </div>
+        <div className="marquee-track items-center">
+          {[...clientLogos, ...clientLogos].map((logo, i) => (
+            <div
+              key={`${logo.src}-${i}`}
+              className="shrink-0 px-8 sm:px-14 h-20 sm:h-24 flex items-center justify-center"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-14 sm:max-h-[6.5rem] w-auto max-w-[160px] sm:max-w-[200px] object-contain object-center opacity-75 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── SERVICES ──────────────────────────────────────────── */}
       <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -382,7 +423,8 @@ export default function Home() {
               <div className="h-[2px] w-10 bg-primary" />
             </div>
             <p className="text-slate-500 text-sm max-w-xl mx-auto reveal delay-100">
-              Certified, trusted fire safety products and hardware we integrate into our projects.
+              Certified, trusted fire safety products and hardware we integrate
+              into our projects.
             </p>
           </div>
 
@@ -404,7 +446,7 @@ export default function Home() {
                 {/* duplicate for seamless loop */}
                 {productImages.map((src, i) => (
                   <div
-                    key={src + 'dup' + i}
+                    key={src + "dup" + i}
                     className="shrink-0 flex items-center justify-center"
                   >
                     <img
@@ -521,20 +563,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── CLIENT MARQUEE ────────────────────────────────────── */}
-      <section className="py-10 bg-bg-light border-y border-slate-200 overflow-hidden">
-        <div className="marquee-track">
-          {clients.map((c, i) => (
-            <span
-              key={i}
-              className="shrink-0 px-10 font-display text-2xl font-black tracking-tighter text-slate-300 uppercase"
-            >
-              {c}
-            </span>
-          ))}
         </div>
       </section>
 
