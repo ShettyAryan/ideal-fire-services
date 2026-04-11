@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { useScrollReveal } from '../components/useScrollReveal'
 
 export default function Contact() {
@@ -24,13 +24,12 @@ export default function Contact() {
 
   return (
     <>
-      <Head>
-        <title>Contact Us | Ideal Fire Services Mumbai</title>
-        <meta
-          name="description"
-          content="Contact Ideal Fire Services for fire safety audits, installation, and AMC in Mumbai."
-        />
-      </Head>
+      <Seo
+        title="Contact Us"
+        description="Request a fire safety quote, site visit, or AMC in Mumbai. Call Ideal Fire Services — hydrants, sprinklers, alarms, extinguishers, and compliance support."
+        path="/contact"
+        keywords="contact fire safety Mumbai, fire audit quote, fire system installation enquiry, Ideal Fire Services phone"
+      />
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────── */}

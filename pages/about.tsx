@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { useScrollReveal } from '../components/useScrollReveal'
 
 const journeyNarrativeBlocks = [
@@ -102,10 +102,12 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>About Us | Ideal Fire Services Mumbai</title>
-        <meta name="description" content="Learn about Ideal Fire Services — 30+ years of fire safety expertise in Mumbai." />
-      </Head>
+      <Seo
+        title="About Us"
+        description="Ideal Fire Services — trusted Mumbai fire safety partner since 1991. Our story, values, licensed team (MFS/LA/RF-124/RD 127), and commitment to life-safety compliance."
+        path="/about"
+        keywords="about Ideal Fire Services, fire safety company Mumbai, fire protection history, licensed fire contractor Maharashtra"
+      />
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────── */}
@@ -160,12 +162,12 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative group reveal-right">
+            <div className="relative group reveal-right max-w-[500px] mx-auto">
               <div className="absolute -inset-4 bg-primary/8 rounded-2xl group-hover:bg-primary/15 transition-all duration-500" />
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgaLz89TgFsyX0CxDj8pZ0QlLj9rSgY2n3ltAKZegDKxD3yuPwRtLHwpjH2E7U8_eSvULq7_tOZ2cUbJY7gbIp2hBs86Zx40XT4f2vDTyfj-4Lynz4xXqTHxu1YZcdOgA-XUIMBp5-iVDmXW-ZSdPtLFJfSb9Hmb_ka3_mUhLI8sYOUGeT3idjj64RPuRwCVRTfa5OW_C4sEx7EJ5YneJ7N-CXzhv74WexEkuMAxEnwezVOpA8_08wAZR7IZqL34Qxt7oN9ygbIt4"
+                src="/images/uncle1.jpeg"
                 alt="Fire safety equipment"
-                className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                className="relative rounded-2xl shadow-2xl h-[600px] w-full object-cover"
               />
             </div>
           </div>

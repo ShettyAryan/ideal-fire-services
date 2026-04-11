@@ -1,22 +1,26 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import Seo from '../../components/Seo'
 import { projects } from '../../lib/projectsData'
 
 export default function ProjectDetail() {
   const router = useRouter()
   const { id } = router.query
 
+  const rawId = useMemo(() => {
+    const v = Array.isArray(id) ? id[0] : id
+    return typeof v === 'string' ? v : undefined
+  }, [id])
+
   const project = useMemo(() => {
-    const rawId = Array.isArray(id) ? id[0] : id
     if (!rawId) return undefined
     const numericId = Number(rawId)
     if (Number.isNaN(numericId)) return undefined
     return projects.find((p) => p.id === numericId)
-  }, [id])
+  }, [rawId])
 
   const images = useMemo(
     () =>
@@ -38,7 +42,8 @@ export default function ProjectDetail() {
     return () => clearInterval(interval)
   }, [images])
 
-  if (!router.isReady) {
+  const hydrationLoading = !router.isReady && rawId === undefined
+  if (hydrationLoading) {
     return (
       <>
         <Navbar />
@@ -51,8 +56,15 @@ export default function ProjectDetail() {
   }
 
   if (!project) {
+    const notFoundPath = rawId ? `/projects/${rawId}` : '/projects'
     return (
       <>
+        <Seo
+          title="Project not found"
+          description="This project is not in our portfolio. Browse fire safety installations and case studies from Ideal Fire Services in Mumbai."
+          path={notFoundPath}
+          noindex
+        />
         <Navbar />
         <main className="min-h-[60vh] flex items-center justify-center bg-bg-light px-5">
           <div className="text-center">
@@ -67,12 +79,19 @@ export default function ProjectDetail() {
     )
   }
 
+  const shareImage = images[0] ?? project.img
+
   return (
     <>
-      <Head>
-        <title>{project.title} | Ideal Fire Services Mumbai</title>
-        <meta name="description" content={`Fire safety project for ${project.client} by Ideal Fire Services in ${project.location}.`} />
-      </Head>
+      <Seo
+        title={project.title}
+        description={`Fire safety project for ${project.client} in ${project.location} — ${project.category} scope delivered by Ideal Fire Services, Mumbai.`}
+        path={`/projects/${project.id}`}
+        image={shareImage}
+        ogType="article"
+        keywords={`${project.title}, ${project.client}, fire safety ${project.location}, ${project.category} fire installation Mumbai`}
+        noindex
+      />
       <Navbar />
 
       {/* HERO */}

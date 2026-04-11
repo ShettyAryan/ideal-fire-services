@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { useScrollReveal } from '../components/useScrollReveal'
 
 const services = [
@@ -86,10 +86,12 @@ export default function Services() {
 
   return (
     <>
-      <Head>
-        <title>Fire Safety Services | Ideal Fire Services Mumbai</title>
-        <meta name="description" content="Comprehensive fire safety services in Mumbai — installation, extinguishers, alarms, and AMC." />
-      </Head>
+      <Seo
+        title="Fire Safety Services"
+        description="Fire fighting system design and installation, hydrants, sprinklers, gas suppression, extinguishers, detection, alarms, audits, and AMC — Mumbai-wide, code-compliant, and Maharashtra Fire Department ready."
+        path="/services"
+        keywords="fire hydrant installation Mumbai, sprinkler systems, fire extinguisher refilling, fire alarm AMC, gas suppression FM200, fire pump room, NBC fire audit"
+      />
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────── */}

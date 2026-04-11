@@ -1,9 +1,9 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useScrollReveal } from '../components/useScrollReveal'
+import Seo from '../components/Seo'
 import { projects, categories, categoryColors, type Category } from '../lib/projectsData'
 
 export default function Projects() {
@@ -15,10 +15,12 @@ export default function Projects() {
 
   return (
     <>
-      <Head>
-        <title>Our Projects | Ideal Fire Services Mumbai</title>
-        <meta name="description" content="Explore Ideal Fire Services' portfolio of 1000+ completed fire safety projects across Mumbai." />
-      </Head>
+      <Seo
+        title="Our Projects"
+        description={`Browse ${projects.length} featured fire safety installations and case studies across Mumbai — commercial towers, residential, industrial, healthcare, and hospitality.`}
+        path="/projects"
+        keywords="fire safety projects Mumbai, commercial fire installation portfolio, residential sprinkler projects, industrial fire systems India"
+      />
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────── */}

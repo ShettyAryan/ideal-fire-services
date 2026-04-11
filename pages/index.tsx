@@ -1,8 +1,9 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
+import { DEFAULT_DESCRIPTION, organizationJsonLd } from '../lib/seo'
 import { useScrollReveal } from '../components/useScrollReveal'
 
 /** Client logos in /public/companylogos — duplicated in marquee for seamless loop */
@@ -130,15 +131,14 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>
-          Ideal Fire Services | Mumbai's Trusted Fire Safety Experts Since 1991
-        </title>
-        <meta
-          name="description"
-          content="Ideal Fire Services — Mumbai's premier fire safety company. Installation, AMC, detection systems, and compliance."
-        />
-      </Head>
+      <Seo
+        useTitleAsIs
+        title="Ideal Fire Services | Mumbai's Trusted Fire Safety Experts Since 1991"
+        description={DEFAULT_DESCRIPTION}
+        path="/"
+        keywords="fire safety Mumbai, fire fighting system installation, fire hydrants, sprinklers, fire alarm systems, fire extinguishers AMC, NBC compliance, Maharashtra Fire Department, Goregaon fire services, licensed fire contractor MFS"
+        jsonLd={organizationJsonLd()}
+      />
 
       <div ref={cursorRef} className="cursor-glow hidden lg:block" />
       <Navbar />
