@@ -194,11 +194,11 @@ export default function Home() {
                 Get a Free Quote
               </Link>
               <Link
-                href="/projects"
+                href="/services"
                 className="inline-flex items-center gap-3 border-2 border-white/30 text-white hover:border-white hover:bg-white/5 px-8 py-4 rounded-lg font-bold tracking-wide transition-all duration-300"
               >
                 <span className="material-symbols-outlined">folder_open</span>
-                View Our Projects
+                View Our Services
               </Link>
             </div>
           </div>
