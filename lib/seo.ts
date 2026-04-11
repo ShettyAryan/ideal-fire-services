@@ -9,7 +9,14 @@ export const SITE_URL =
 
 /** Default share image (absolute URL) */
 export const DEFAULT_OG_IMAGE =
-  "https://res.cloudinary.com/dsvgadc5d/image/upload/v1775908502/idealfireservicelogo_blgoqz.svg";
+  'https://res.cloudinary.com/dsvgadc5d/image/upload/v1775908502/idealfireservicelogo_blgoqz.svg'
+
+/**
+ * Square PNG (48×48) for browsers + Google Search favicon.
+ * Google recommends favicons larger than 48×48 for visibility in results.
+ */
+export const FAVICON_GOOGLE_PNG =
+  'https://res.cloudinary.com/dsvgadc5d/image/upload/w_48,h_48,c_fit,f_png,q_auto/v1775908502/idealfireservicelogo_blgoqz.png'
 
 export const DEFAULT_DESCRIPTION =
   'Mumbai fire safety experts since 1991: hydrants, sprinklers, fire alarms, extinguishers, AMC, audits, and Maharashtra Fire Department compliance. Licensed MFS/LA/RF-124/RD 127.'

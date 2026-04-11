@@ -1,10 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { FAVICON_GOOGLE_PNG } from '../lib/seo'
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
         <meta name="theme-color" content="#c20000" />
+        <link rel="icon" href={FAVICON_GOOGLE_PNG} type="image/png" sizes="48x48" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
