@@ -18,7 +18,7 @@ export default function Footer() {
                 </span>
               </div> */}
               <img
-                src="https://res.cloudinary.com/dsvgadc5d/image/upload/v1773683566/Ideal_Fire_Services_grhcsp.png"
+                src="https://res.cloudinary.com/dsvgadc5d/image/upload/v1775908502/idealfireservicelogo_blgoqz.svg"
                 alt="Ideal Fire Services"
                 className="w-10 h-10"
               />

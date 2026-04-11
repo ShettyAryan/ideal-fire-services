@@ -9,7 +9,7 @@ export const SITE_URL =
 
 /** Default share image (absolute URL) */
 export const DEFAULT_OG_IMAGE =
-  'https://res.cloudinary.com/dsvgadc5d/image/upload/v1773683566/Ideal_Fire_Services_grhcsp.png'
+  "https://res.cloudinary.com/dsvgadc5d/image/upload/v1775908502/idealfireservicelogo_blgoqz.svg";
 
 export const DEFAULT_DESCRIPTION =
   'Mumbai fire safety experts since 1991: hydrants, sprinklers, fire alarms, extinguishers, AMC, audits, and Maharashtra Fire Department compliance. Licensed MFS/LA/RF-124/RD 127.'

@@ -27,9 +27,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-lg shadow-slate-900/5 border-b border-slate-100"
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-lg shadow-slate-900/5 border-b border-slate-100">
         <nav className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -43,12 +41,14 @@ export default function Navbar() {
                 </span>
               </div> */}
               <img
-                src="https://res.cloudinary.com/dsvgadc5d/image/upload/v1773683566/Ideal_Fire_Services_grhcsp.png"
+                src="https://res.cloudinary.com/dsvgadc5d/image/upload/v1775908502/idealfireservicelogo_blgoqz.svg"
                 alt="Ideal Fire Services"
                 className="w-10 h-10"
               />
               <div>
-                <div className={`font-display text-xl font-black tracking-wider text-slate-900 leading-none uppercase`}>
+                <div
+                  className={`font-display text-xl font-black tracking-wider text-slate-900 leading-none uppercase`}
+                >
                   Ideal Fire Services
                 </div>
                 <div className="text-[9px] font-bold tracking-[0.25em] text-primary uppercase">
