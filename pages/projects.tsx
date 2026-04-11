@@ -20,6 +20,7 @@ export default function Projects() {
         description={`Browse ${projects.length} featured fire safety installations and case studies across Mumbai — commercial towers, residential, industrial, healthcare, and hospitality.`}
         path="/projects"
         keywords="fire safety projects Mumbai, commercial fire installation portfolio, residential sprinkler projects, industrial fire systems India"
+        noindex
       />
       <Navbar />
 
