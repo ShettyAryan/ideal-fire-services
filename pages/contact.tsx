@@ -296,7 +296,7 @@ export default function Contact() {
                       hours: "9:30 AM – 6:00 PM",
                       open: true,
                     },
-                    
+
                     { day: "Sunday", hours: "Emergency Only", open: false },
                   ].map((item) => (
                     <div
@@ -453,15 +453,15 @@ export default function Contact() {
               Visit Our Office
             </h4>
             <p className="font-bold text-slate-900 text-sm mb-2">
-              Ideal Fire Services HQ
+              Ideal Fire Services
             </p>
             <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-              Plot 45, Industrial Estate, Off Link Road,
+              204A, B Wing, Sumit Samarth Arcade,
               <br />
-              Goregaon West, Mumbai 400104
+              Aarey Road, Goregaon West, Mumbai 400104
             </p>
             <a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/dir//Ideal+Fire+Services,+B+Wing,+Sumit+Samarth+Arcade,+204A,+Aarey+Rd,+Goregaon+West,+Mumbai,+Maharashtra+400104/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3be7b778d8246bd5:0x21b47ca2a5934c0e?sa=X&ved=1t:57443&ictx=111"
               target="_blank"
               rel="noreferrer"
               className="btn-glow inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-primary text-white w-full py-2.5 rounded-xl font-bold text-xs tracking-widest uppercase transition-all duration-300"
