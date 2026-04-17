@@ -1,13 +1,30 @@
-import Link from 'next/link'
+import emailjs from '@emailjs/browser'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Seo from '../components/Seo'
 import { useScrollReveal } from '../components/useScrollReveal'
 
+const SERVICE_OPTIONS = [
+  'Fire Hydrant System Installation',
+  'Automatic Sprinkler System',
+  'Fire Alarm & Detection',
+  'Gas Suppression System',
+  'Annual Maintenance Contract (AMC)',
+  'Extinguisher Supply & Refilling',
+  'Fire Safety Audit / Compliance',
+  'Other',
+] as const
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+const INDIAN_PHONE_REGEX = /^[6-9]\d{9}$/
+const INDIAN_PHONE_WITH_COUNTRY_REGEX = /^91[6-9]\d{9}$/
+
 export default function Contact() {
   useScrollReveal()
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [sendError, setSendError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,9 +34,93 @@ export default function Contact() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSendError(null)
+
+    const trimmedData = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+      service: formData.service.trim(),
+      message: formData.message.trim(),
+    }
+    const normalizedPhone = trimmedData.phone.replace(/\D/g, '')
+    const hasCountryCodePrefix = /^\s*\+?91/.test(trimmedData.phone)
+
+    if (
+      !trimmedData.name ||
+      !trimmedData.phone ||
+      !trimmedData.email ||
+      !trimmedData.company ||
+      !trimmedData.service
+    ) {
+      setSendError('Please fill all required fields before submitting.')
+      return
+    }
+
+    const isValidPhone = hasCountryCodePrefix
+      ? INDIAN_PHONE_WITH_COUNTRY_REGEX.test(normalizedPhone)
+      : INDIAN_PHONE_REGEX.test(normalizedPhone)
+
+    if (!isValidPhone) {
+      setSendError('Please enter a valid 10-digit Indian phone number.')
+      return
+    }
+
+    const localPhoneNumber = hasCountryCodePrefix
+      ? normalizedPhone.slice(2)
+      : normalizedPhone
+
+    if (!EMAIL_REGEX.test(trimmedData.email)) {
+      setSendError('Please enter a valid email address.')
+      return
+    }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSendError(
+        'The contact form is not fully set up yet. Please add EmailJS keys to the site configuration, or call us directly.'
+      )
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: trimmedData.name,
+          phone: `+91 ${localPhoneNumber}`,
+          email: trimmedData.email,
+          company: trimmedData.company,
+          service: trimmedData.service,
+          message: trimmedData.message || '—',
+        },
+        { publicKey }
+      )
+      setSubmitted(true)
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        company: '',
+        service: '',
+        message: '',
+      })
+    } catch (err) {
+      console.error(err)
+      setSendError(
+        'We could not send your message. Please try again in a moment or reach us by phone or email.'
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -145,7 +246,11 @@ export default function Contact() {
                     Our team will get back to you within 24 business hours.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    type="button"
+                    onClick={() => {
+                      setSubmitted(false)
+                      setSendError(null)
+                    }}
                     className="text-primary font-bold hover:underline text-sm"
                   >
                     Send another message
@@ -181,6 +286,9 @@ export default function Contact() {
                         required
                         placeholder="+91 00000 00000"
                         value={formData.phone}
+                        inputMode="tel"
+                        pattern="(?:\+91[\s-]?)?[6-9]\d{9}"
+                        title="Enter a valid Indian phone number (e.g. 9876543210 or +91 9876543210)"
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
@@ -192,10 +300,11 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="text-xs font-black uppercase tracking-widest text-slate-500 block mb-2">
-                        Email
+                        Email *
                       </label>
                       <input
                         type="email"
+                        required
                         placeholder="john@company.com"
                         value={formData.email}
                         onChange={(e) =>
@@ -206,10 +315,11 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="text-xs font-black uppercase tracking-widest text-slate-500 block mb-2">
-                        Company / Building
+                        Company / Building *
                       </label>
                       <input
                         type="text"
+                        required
                         placeholder="ABC Corp"
                         value={formData.company}
                         onChange={(e) =>
@@ -225,6 +335,7 @@ export default function Contact() {
                       Service Required
                     </label>
                     <select
+                      required
                       value={formData.service}
                       onChange={(e) =>
                         setFormData({ ...formData, service: e.target.value })
@@ -232,14 +343,11 @@ export default function Contact() {
                       className="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-bg-light focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-sm"
                     >
                       <option value="">Select a service...</option>
-                      <option>Fire Hydrant System Installation</option>
-                      <option>Automatic Sprinkler System</option>
-                      <option>Fire Alarm & Detection</option>
-                      <option>Gas Suppression System</option>
-                      <option>Annual Maintenance Contract (AMC)</option>
-                      <option>Extinguisher Supply & Refilling</option>
-                      <option>Fire Safety Audit / Compliance</option>
-                      <option>Other</option>
+                      {SERVICE_OPTIONS.map((label) => (
+                        <option key={label} value={label}>
+                          {label}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
@@ -258,12 +366,24 @@ export default function Contact() {
                     />
                   </div>
 
+                  {sendError && (
+                    <div
+                      className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                      role="alert"
+                    >
+                      {sendError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="btn-glow w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl font-black tracking-widest uppercase text-sm transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-3"
+                    disabled={submitting}
+                    className="btn-glow w-full bg-primary hover:bg-primary-dark disabled:opacity-60 disabled:pointer-events-none text-white py-4 rounded-xl font-black tracking-widest uppercase text-sm transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-3"
                   >
-                    <span className="material-symbols-outlined">send</span>
-                    Submit Request
+                    <span className="material-symbols-outlined">
+                      {submitting ? 'hourglass_empty' : 'send'}
+                    </span>
+                    {submitting ? 'Sending…' : 'Submit Request'}
                   </button>
                   <p className="text-center text-xs text-slate-400">
                     Your data is safe and handled per our privacy policy.
